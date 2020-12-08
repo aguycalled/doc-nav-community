@@ -7,9 +7,6 @@ script:
 - make -C . clean html
 - mv docs/html/* docs/
 - touch docs/.nojekyll
-after_success:
-- coverage run --source=httpsuite -m pytest tests/
-- coveralls
 deploy:
   - provider: pages:git
     verbose: true

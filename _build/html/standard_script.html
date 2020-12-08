@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Standard Scripts &mdash; NavCoin Core Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Special Transactions" href="special_tx.html" />
+    <link rel="prev" title="Script Opcodes" href="opcodes.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> NavCoin Core Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="get.html">How to get NavCoin Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use.html">How to use NavCoin Core</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpc.html">RPC methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network.html">Network parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base58check.html">Base58Check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="payloads.html">Address Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opcodes.html">Script Opcodes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Standard Scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pay-to-public-key-hash-p2pkh">Pay to Public Key Hash (P2PKH)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pay-to-cold-staking-p2cs">Pay To Cold Staking (P2CS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pay-to-cold-staking-v2-p2cs2">Pay To Cold Staking v2 (P2CS2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accumulation-in-the-community-fund">Accumulation in the Community Fund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remeedable-without-conditions">Remeedable without conditions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#dao-special-scripts">DAO Special Scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#proposal-vote">Proposal Vote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#payment-request-vote">Payment Request Vote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#consultation-support">Consultation Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#consultation-vote">Consultation Vote</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="special_tx.html">Special Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blsct.html">BLSCT Cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coldstaking.html">Cold Staking</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Release notes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.0.0.html">NavCoin v4.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.2.0.html">NavCoin v4.2.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.2.1.html">NavCoin v4.2.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.3.0.html">NavCoin v4.3.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.4.0.html">NavCoin v4.4.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.0.html">NavCoin v4.5.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.0-additional-testing-notes/modified-coldstaking-client-notes-4.5.0.html">Modified client testing for cold-staking v4.5.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.1.html">NavCoin v4.5.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.2.html">NavCoin v4.5.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.6.0.html">NavCoin v4.6.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.0.html">NavCoin v4.7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.1.html">NavCoin v4.7.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.2.html">NavCoin v4.7.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.3.html">NavCoin v4.7.3 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-5.0.0.html">NavCoin v5.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-5.0.1.html">NavCoin v5.0.1 Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NavCoin Core Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Standard Scripts</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/standard_script.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="standard-scripts">
+<span id="standard-script"></span><h1>Standard Scripts<a class="headerlink" href="#standard-scripts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pay-to-public-key-hash-p2pkh">
+<h2>Pay to Public Key Hash (P2PKH)<a class="headerlink" href="#pay-to-public-key-hash-p2pkh" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This script is the default for Legacy Public Addresses.</p>
+</div>
+<p>Script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OP_DUP</span> <span class="n">OP_HASH160</span> <span class="o">&lt;</span><span class="n">PKH</span><span class="o">&gt;</span> <span class="n">OP_EQUALVERIFY</span> <span class="n">OP_CHECKSIG</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pay-to-cold-staking-p2cs">
+<span id="p2cs"></span><h2>Pay To Cold Staking (P2CS)<a class="headerlink" href="#pay-to-cold-staking-p2cs" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This script is the default for Cold Staking v1 Addresses, which serve for delegating staking rights.</p>
+</div>
+<p>Outputs guarded by this script will be only spendable by the public key hash <code class="docutils literal notranslate"><span class="pre">PKH_2</span></code> and stakable by the public key hash <code class="docutils literal notranslate"><span class="pre">PKH_1</span></code>. <code class="docutils literal notranslate"><span class="pre">PKH_1</span></code> will hold both staking and voting rights.</p>
+<p>For an output to be considered staked, it must be spent in the coinstake transaction. <a class="reference external" href="https://github.com/navcoin/npips/blob/master/npip-0002.mediawiki">Read more</a>.</p>
+<p>Script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OP_COINSTAKE</span> <span class="n">OP_IF</span>
+  <span class="n">OP_DUP</span> <span class="n">OP_HASH160</span> <span class="o">&lt;</span><span class="n">PKH_1</span><span class="o">&gt;</span> <span class="n">OP_EQUALVERIFY</span> <span class="n">OP_CHECKSIG</span>
+<span class="n">OP_ELSE</span>
+  <span class="n">OP_DUP</span> <span class="n">OP_HASH160</span> <span class="o">&lt;</span><span class="n">PKH_2</span><span class="o">&gt;</span> <span class="n">OP_EQUALVERIFY</span> <span class="n">OP_CHECKSIG</span>
+<span class="n">OP_ENDIF</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pay-to-cold-staking-v2-p2cs2">
+<span id="p2cs2"></span><h2>Pay To Cold Staking v2 (P2CS2)<a class="headerlink" href="#pay-to-cold-staking-v2-p2cs2" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This script is the default for Cold Staking v2 Addresses, which serve for delegating staking and voting rights.</p>
+</div>
+<p>Outputs guarded by this script will be only spendable by the public key hash <code class="docutils literal notranslate"><span class="pre">PKH_2</span></code> and stakable by the public key hash <code class="docutils literal notranslate"><span class="pre">PKH_1</span></code>. Voting rights are delegated to <code class="docutils literal notranslate"><span class="pre">PKH_3</span></code>.</p>
+<p>For an output to be considered staked, it must be spent in the coinstake transaction.</p>
+<p>Script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">PKH_3</span><span class="o">&gt;</span>
+<span class="n">OP_DROP</span>
+<span class="n">OP_COINSTAKE</span> <span class="n">OP_IF</span>
+  <span class="n">OP_DUP</span> <span class="n">OP_HASH160</span> <span class="o">&lt;</span><span class="n">PKH_1</span><span class="o">&gt;</span> <span class="n">OP_EQUALVERIFY</span> <span class="n">OP_CHECKSIG</span>
+<span class="n">OP_ELSE</span>
+  <span class="n">OP_DUP</span> <span class="n">OP_HASH160</span> <span class="o">&lt;</span><span class="n">PKH_2</span><span class="o">&gt;</span> <span class="n">OP_EQUALVERIFY</span> <span class="n">OP_CHECKSIG</span>
+<span class="n">OP_ENDIF</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="accumulation-in-the-community-fund">
+<h2>Accumulation in the Community Fund<a class="headerlink" href="#accumulation-in-the-community-fund" title="Permalink to this headline">¶</a></h2>
+<p>Coins sent to this script will be effectively burned and removed from the spendable supply. The value of the output will be added to the available supply of the Community Fund.</p>
+<p>Script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OP_RETURN</span> <span class="n">OP_CFUND</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="remeedable-without-conditions">
+<h2>Remeedable without conditions<a class="headerlink" href="#remeedable-without-conditions" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This script is the default for private BLSCT outputs, as they are still guarded by the spending key. Please don’t use in other types of outputs, as they would be spendable by anyone!</p>
+</div>
+<p>Script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OP_1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="dao-special-scripts">
+<span id="script-dao"></span><h1>DAO Special Scripts<a class="headerlink" href="#dao-special-scripts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="proposal-vote">
+<h2>Proposal Vote<a class="headerlink" href="#proposal-vote" title="Permalink to this headline">¶</a></h2>
+<p>Outputs with this script signal a vote <code class="docutils literal notranslate"><span class="pre">VOTE</span></code> for a proposal with hash <code class="docutils literal notranslate"><span class="pre">PROPOSAL_HASH</span></code>. <code class="docutils literal notranslate"><span class="pre">VOTE</span></code> can be <code class="docutils literal notranslate"><span class="pre">OP_YES</span></code>, <code class="docutils literal notranslate"><span class="pre">OP_NO</span></code>. <code class="docutils literal notranslate"><span class="pre">OP_ABSTAIN</span></code> or <code class="docutils literal notranslate"><span class="pre">OP_REMOVE</span></code>.</p>
+<p>Script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OP_RETURN</span> <span class="n">OP_CFUND</span> <span class="n">OP_PROP</span> <span class="o">&lt;</span><span class="n">VOTE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">PROPOSAL_HASH</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="payment-request-vote">
+<h2>Payment Request Vote<a class="headerlink" href="#payment-request-vote" title="Permalink to this headline">¶</a></h2>
+<p>Outputs with this script signal a vote <code class="docutils literal notranslate"><span class="pre">VOTE</span></code> for a payment request with hash <code class="docutils literal notranslate"><span class="pre">PREQUESTL_HASH</span></code>. <code class="docutils literal notranslate"><span class="pre">VOTE</span></code> can be <code class="docutils literal notranslate"><span class="pre">OP_YES</span></code>, <code class="docutils literal notranslate"><span class="pre">OP_NO</span></code>. <code class="docutils literal notranslate"><span class="pre">OP_ABSTAIN</span></code> or <code class="docutils literal notranslate"><span class="pre">OP_REMOVE</span></code>.</p>
+<p>Script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OP_RETURN</span> <span class="n">OP_CFUND</span> <span class="n">OP_PREQ</span> <span class="o">&lt;</span><span class="n">VOTE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">PREQUEST_HASH</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="consultation-support">
+<h2>Consultation Support<a class="headerlink" href="#consultation-support" title="Permalink to this headline">¶</a></h2>
+<p>Outputs with this script signal a support vote <code class="docutils literal notranslate"><span class="pre">VOTE</span></code> for a consultation with hash <code class="docutils literal notranslate"><span class="pre">PROPOSAL_HASH</span></code>. <code class="docutils literal notranslate"><span class="pre">VOTE</span></code> can be <code class="docutils literal notranslate"><span class="pre">OP_YES</span></code> or <code class="docutils literal notranslate"><span class="pre">OP_REMOVE</span></code>.</p>
+<p>Script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OP_RETURN</span> <span class="n">OP_DAO</span> <span class="o">&lt;</span><span class="n">VOTE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">CONSULTATION_HASH</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="consultation-vote">
+<h2>Consultation Vote<a class="headerlink" href="#consultation-vote" title="Permalink to this headline">¶</a></h2>
+<p>Outputs with this script signal a vote <code class="docutils literal notranslate"><span class="pre">VOTE_VALUE</span></code> for a consultation with hash <code class="docutils literal notranslate"><span class="pre">PROPOSAL_HASH</span></code>. <code class="docutils literal notranslate"><span class="pre">VOTE</span></code> can be <code class="docutils literal notranslate"><span class="pre">OP_ABSTAIN</span></code>, <code class="docutils literal notranslate"><span class="pre">OP_ANSWER</span></code> or <code class="docutils literal notranslate"><span class="pre">OP_REMOVE</span></code>. If <code class="docutils literal notranslate"><span class="pre">VOTE</span></code> is <code class="docutils literal notranslate"><span class="pre">OP_ANSWER</span></code>, the answer for range consultations is specified as <code class="docutils literal notranslate"><span class="pre">VOTE_VALUE</span></code></p>
+<p>Script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OP_RETURN</span> <span class="n">OP_CONSULTATION</span> <span class="o">&lt;</span><span class="n">VOTE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">CONSULTATION_HASH</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">VOTE_VALUE</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="special_tx.html" class="btn btn-neutral float-right" title="Special Transactions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="opcodes.html" class="btn btn-neutral float-left" title="Script Opcodes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, NavCoin Core Dev Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,327 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>BLSCT Cryptography &mdash; NavCoin Core Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Cold Staking" href="coldstaking.html" />
+    <link rel="prev" title="Special Transactions" href="special_tx.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> NavCoin Core Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="get.html">How to get NavCoin Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use.html">How to use NavCoin Core</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpc.html">RPC methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network.html">Network parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base58check.html">Base58Check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="payloads.html">Address Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opcodes.html">Script Opcodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard_script.html">Standard Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard_script.html#dao-special-scripts">DAO Special Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special_tx.html">Special Transactions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">BLSCT Cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coldstaking.html">Cold Staking</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Release notes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.0.0.html">NavCoin v4.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.2.0.html">NavCoin v4.2.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.2.1.html">NavCoin v4.2.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.3.0.html">NavCoin v4.3.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.4.0.html">NavCoin v4.4.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.0.html">NavCoin v4.5.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.0-additional-testing-notes/modified-coldstaking-client-notes-4.5.0.html">Modified client testing for cold-staking v4.5.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.1.html">NavCoin v4.5.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.2.html">NavCoin v4.5.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.6.0.html">NavCoin v4.6.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.0.html">NavCoin v4.7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.1.html">NavCoin v4.7.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.2.html">NavCoin v4.7.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.3.html">NavCoin v4.7.3 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-5.0.0.html">NavCoin v5.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-5.0.1.html">NavCoin v5.0.1 Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NavCoin Core Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>BLSCT Cryptography</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/blsct.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="blsct-cryptography">
+<span id="blsct"></span><h1>BLSCT Cryptography<a class="headerlink" href="#blsct-cryptography" title="Permalink to this headline">¶</a></h1>
+<p>This section will describe the cryptography behind BLSCT, the novel protocol which we used to build NavCoin’s new private token xNAV.</p>
+<p>For a wallet to create and receive BLSCT transactions, it needs to own a set of BLS keys. Let <span class="math notranslate nohighlight">\(KDF(k, p)\)</span> be a key derivation function where <code class="docutils literal notranslate"><span class="pre">k</span></code> is a BLS private key and <code class="docutils literal notranslate"><span class="pre">p</span></code> a derivation path, and <code class="docutils literal notranslate"><span class="pre">m</span></code> the wallet’s master secret key. We use <code class="docutils literal notranslate"><span class="pre">G1</span></code> from the pairing-friendly elliptic curve BLS12-381 and let <code class="docutils literal notranslate"><span class="pre">g</span></code> be a <code class="docutils literal notranslate"><span class="pre">G1</span></code> generator. Let <code class="docutils literal notranslate"><span class="pre">H</span></code> be a secure hash function whose output is of 256-bit length and <code class="docutils literal notranslate"><span class="pre">HG1</span></code> a hash function whose output is mapped as a <code class="docutils literal notranslate"><span class="pre">G1</span></code> element.</p>
+<p>The first steps are to calculate:</p>
+<blockquote>
+<div><ul class="simple">
+<li>A master blinding key: <span class="math notranslate nohighlight">\(bmk = KDF(m, 130'/1')\)</span></li>
+<li>A master view key: <span class="math notranslate nohighlight">\(vmk = KDF(m, 130'/0'/0')\)</span></li>
+<li>A master spend key: <span class="math notranslate nohighlight">\(smk = KDF(m, 130'/0'/1')\)</span></li>
+</ul>
+</div></blockquote>
+<p>A wallet can then generate the needed keys to construct an arbitrary number of addresses where coins can be received. Wallets generate their <code class="docutils literal notranslate"><span class="pre">SAi</span></code>-th address <span class="math notranslate nohighlight">\(SAi = (0,1,2,...)\)</span> in their <code class="docutils literal notranslate"><span class="pre">Ai</span></code>-th account <span class="math notranslate nohighlight">\(Ai = (0,1,2,...)\)</span> as a pair of public keys <code class="docutils literal notranslate"><span class="pre">(C,</span> <span class="pre">D)</span></code> where:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}m &amp;= H(&quot;SubAddress&quot;||vmk||Ai||SAi)
+\\
+M &amp;= m*g
+\\
+D &amp;= g*smk + M
+\\
+C &amp;= vmk*D\end{split}\]</div>
+<p>Wallets must store <code class="docutils literal notranslate"><span class="pre">D</span></code> in the wallet’s database registered to the index <code class="docutils literal notranslate"><span class="pre">(Ai,</span> <span class="pre">SAi)</span></code> as an integer pair. Addresses are a <a class="reference internal" href="base58check.html#base58check"><span class="std std-ref">Base58Check</span></a> representation of the keys <code class="docutils literal notranslate"><span class="pre">(C,</span> <span class="pre">D)</span></code> using <code class="docutils literal notranslate"><span class="pre">73</span></code> and <code class="docutils literal notranslate"><span class="pre">33</span></code> as mainnet <a class="reference internal" href="network.html#network-version-bytes"><span class="std std-ref">Version bytes</span></a>. When a wallet wants to send funds to an address, it must:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Decode and extract <code class="docutils literal notranslate"><span class="pre">(C,</span> <span class="pre">D)</span></code> from the address.</li>
+<li>Maintain an incremental counter of blinding addresses <code class="docutils literal notranslate"><span class="pre">Bi</span></code>.</li>
+<li>Generate an ephemeral private key <span class="math notranslate nohighlight">\(e = KDF(bmk, Bi++)\)</span></li>
+<li>Calculate the ephemeral public key <span class="math notranslate nohighlight">\(E = e*g\)</span></li>
+<li>Generate the output’s public key <span class="math notranslate nohighlight">\(R = e*D\)</span></li>
+<li>Generate the spending key <span class="math notranslate nohighlight">\(P = H(e*C)*g+D\)</span></li>
+<li>Generate a shared secret <span class="math notranslate nohighlight">\(S = e*C\)</span></li>
+</ul>
+</div></blockquote>
+<p>The wallet must construct a per-output range-proof <code class="docutils literal notranslate"><span class="pre">bp</span></code> to prove that the hidden amount <code class="docutils literal notranslate"><span class="pre">v</span></code> is positive and within the allowed range. It is allowed to attach an encrypted message <code class="docutils literal notranslate"><span class="pre">memo</span></code> limited to 54 bytes only viewable by the transaction’s recipient. Some of the scalars used in the proof creation are calculated from the shared secret <code class="docutils literal notranslate"><span class="pre">S</span></code>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}alpha &amp;= H(S||1) + (v | (memo[:23]&lt;&lt;64))
+\\
+rho &amp;= H(S||2)
+\\
+tau1 &amp;= H(S||3) + (memo[23:54])
+\\
+tau2 &amp;= H(S||4)
+\\
+gamma &amp;= H(S||10)\end{split}\]</div>
+<p>The commitment’s secret key gamma will sign the message <code class="docutils literal notranslate"><span class="pre">BLSCTBALANCE</span></code> to create a signature <code class="docutils literal notranslate"><span class="pre">BPSO</span></code>, which will serve to prove later that the transaction creates no new coins. Constructing the signature using the basic scheme and a constant message is secure against a rogue public-key attack combined with a valid Bulletproofs range-proof. An attacker can not create it without knowledge of the secret key gamma.</p>
+<div class="math notranslate nohighlight">
+\[BPSO = BasicSchemeSign(gamma, &quot;BLSCTBALANCE&quot;)\]</div>
+<p>The output’s ephemeral key <code class="docutils literal notranslate"><span class="pre">e</span></code> will sign the output’s hash to create a signature <code class="docutils literal notranslate"><span class="pre">BSO</span></code> using the augmented scheme.</p>
+<div class="math notranslate nohighlight">
+\[BSO = AugSchemeSign(e, H(tx_out))\]</div>
+<p>The range proof <code class="docutils literal notranslate"><span class="pre">bp</span></code> and the public keys <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">R</span></code>, and <code class="docutils literal notranslate"><span class="pre">P</span></code> will be attached to a transaction’s output when it targets a private address. Transactions that include a BLSCT output have their version bit <code class="docutils literal notranslate"><span class="pre">10</span></code> set to <code class="docutils literal notranslate"><span class="pre">1</span></code>. Both public and BLSCT outputs can combine in the same transaction.</p>
+<p>When a client sees this output, he will determine whether it belongs to him or not by performing the following checks:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Calculate <span class="math notranslate nohighlight">\(D' = P - H(vmk*R)*g\)</span> and check if its wallet’s database has it registered to an index <code class="docutils literal notranslate"><span class="pre">(Ai',</span> <span class="pre">SAi')</span></code>.</li>
+<li>Calculate <span class="math notranslate nohighlight">\(S' = vmk * R\)</span></li>
+<li>Derive <code class="docutils literal notranslate"><span class="pre">alpha</span></code>, <code class="docutils literal notranslate"><span class="pre">rho</span></code>, <code class="docutils literal notranslate"><span class="pre">tau1</span></code> and <code class="docutils literal notranslate"><span class="pre">tau2</span></code> and <code class="docutils literal notranslate"><span class="pre">gamma'</span></code> from <code class="docutils literal notranslate"><span class="pre">S'</span></code>.</li>
+<li>Verify if the range proof <code class="docutils literal notranslate"><span class="pre">bp</span></code> is valid.</li>
+<li>Calculate <span class="math notranslate nohighlight">\(ex = (mu - rho*x) - alpha\)</span> and <span class="math notranslate nohighlight">\(ex2 = ((taux - tau2*x^2 - gamma*z^2) * x^{-1}) - tau1\)</span></li>
+<li>Extract the amount as <span class="math notranslate nohighlight">\(v' = ex \&amp; 0xFFFFFFFFFFFFFFFF\)</span></li>
+<li>Extract the encrypted message as <span class="math notranslate nohighlight">\(memo' = ex2 || ex &gt;&gt; 64\)</span></li>
+<li>Check if the range-proof value’s commitment equals to <span class="math notranslate nohighlight">\(gamma'*g + v'*HG1(g||&quot;bulletproof&quot;||0)\)</span></li>
+</ul>
+</div></blockquote>
+<p>When the client wants to spend this output, it must set the spending transaction’s version bit <code class="docutils literal notranslate"><span class="pre">11</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code>. It can calculate the output’s private spending key as <span class="math notranslate nohighlight">\(p = H(vmk*R) + smk + H(&quot;SubAddress&quot;||vmk||Ai'||SAi')\)</span>. The private key <code class="docutils literal notranslate"><span class="pre">p</span></code> will sign the transaction input hash using the augmented scheme to produce the signature <code class="docutils literal notranslate"><span class="pre">BSI</span></code>.</p>
+<div class="math notranslate nohighlight">
+\[BSI = AugSchemeSign(p, H(tx_in))\]</div>
+<p>The extracted commitment’s secret key <code class="docutils literal notranslate"><span class="pre">gamma'</span></code> will sign the message <code class="docutils literal notranslate"><span class="pre">BLSCTBALANCE</span></code> to create a signature <code class="docutils literal notranslate"><span class="pre">BPSI</span></code>.</p>
+<div class="math notranslate nohighlight">
+\[BPSI = BasicSchemeSign(gamma', &quot;BLSCTBALANCE&quot;)\]</div>
+<p>The wallet will store the aggregation of all of the transaction’s <code class="docutils literal notranslate"><span class="pre">BSI``s</span> <span class="pre">and</span> <span class="pre">``BSO``s</span> <span class="pre">in</span> <span class="pre">its</span> <span class="pre">BLS</span> <span class="pre">transaction</span> <span class="pre">signature</span> <span class="pre">field</span> <span class="pre">as</span> <span class="pre">``BS</span></code>. The transaction’s BLS balance signature will result from aggregating all the <code class="docutils literal notranslate"><span class="pre">BPSI``s</span> <span class="pre">and</span> <span class="pre">``BPSO``s</span> <span class="pre">signatures</span> <span class="pre">as</span> <span class="pre">``BPS</span></code>.</p>
+<p>Every transaction must include an output with a transparent amount whose script is the provably unspendable <code class="docutils literal notranslate"><span class="pre">OP_RETURN</span></code> representing the sender’s fee. Transactions are not allowed to combine public and private inputs.</p>
+<p>A validator can determine if a transaction is correct:</p>
+<blockquote>
+<div><ul class="simple">
+<li>By verifying that <code class="docutils literal notranslate"><span class="pre">BPS</span></code> is a valid signature by defining <code class="docutils literal notranslate"><span class="pre">pkBal</span></code> as, for each transaction’s input <code class="docutils literal notranslate"><span class="pre">prevOut</span></code>, the sum of <span class="math notranslate nohighlight">\(prevOut.bp.v\)</span> if it is private or <span class="math notranslate nohighlight">\(prevOut.amount*HG1(g||&quot;bulletproof&quot;||0)\)</span> if it is public, minus the sum of, for each transaction’s output <code class="docutils literal notranslate"><span class="pre">out</span></code>, <span class="math notranslate nohighlight">\(out.bp.v\)</span> if it is private or <span class="math notranslate nohighlight">\(out.amount*HG1(g||&quot;bulletproof&quot;||0)\)</span> if it is public, and using <code class="docutils literal notranslate"><span class="pre">pkBal</span></code> as the signer’s public key and <code class="docutils literal notranslate"><span class="pre">BLSCTBALANCE</span></code> as the message of the basic scheme,</li>
+<li>by verifying that <code class="docutils literal notranslate"><span class="pre">BS</span></code> is a valid signature using the augmented scheme with <code class="docutils literal notranslate"><span class="pre">P,</span> <span class="pre">H(tx_in)</span></code> for each transaction’s input as inputs to the verify signature function, and <code class="docutils literal notranslate"><span class="pre">E,</span> <span class="pre">H(tx_out)</span></code> from each transaction’s output,</li>
+<li>and by verifying that for each output, its range proof <code class="docutils literal notranslate"><span class="pre">bp</span></code> is validated correctly.</li>
+</ul>
+</div></blockquote>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="coldstaking.html" class="btn btn-neutral float-right" title="Cold Staking" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="special_tx.html" class="btn btn-neutral float-left" title="Special Transactions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, NavCoin Core Dev Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

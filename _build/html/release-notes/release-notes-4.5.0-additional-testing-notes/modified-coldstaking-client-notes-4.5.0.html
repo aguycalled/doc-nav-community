@@ -1,0 +1,480 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Modified client testing for cold-staking v4.5.0 &mdash; NavCoin Core Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="NavCoin v4.5.1 Release Notes" href="../release-notes-4.5.1.html" />
+    <link rel="prev" title="NavCoin v4.5.0 Release Notes" href="../release-notes-4.5.0.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> NavCoin Core Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../get.html">How to get NavCoin Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../use.html">How to use NavCoin Core</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rpc.html">RPC methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../network.html">Network parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../base58check.html">Base58Check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../payloads.html">Address Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../serialization.html">Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../opcodes.html">Script Opcodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../standard_script.html">Standard Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../standard_script.html#dao-special-scripts">DAO Special Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../special_tx.html">Special Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../blsct.html">BLSCT Cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../coldstaking.html">Cold Staking</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Release notes:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../release-notes-4.0.0.html">NavCoin v4.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes-4.2.0.html">NavCoin v4.2.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes-4.2.1.html">NavCoin v4.2.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes-4.3.0.html">NavCoin v4.3.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes-4.4.0.html">NavCoin v4.4.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes-4.5.0.html">NavCoin v4.5.0 Release Notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Modified client testing for cold-staking v4.5.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#modified-spending-wallet-to-stake-inputs">1. Modified spending wallet to stake inputs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aim">Aim:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wallet-setup">Wallet setup:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modifications">Modifications:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result">Result:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modified-staking-wallet-to-send-staking-outputs-to-another-address">2. Modified staking wallet to send staking outputs to another address</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Aim:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Wallet setup:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Modifications:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Result:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Conclusion:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modified-staking-wallet-to-spend-inputs">3. Modified staking wallet to spend inputs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Aim:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Wallet setup:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Modifications:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Result:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Conclusion:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes-4.5.1.html">NavCoin v4.5.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes-4.5.2.html">NavCoin v4.5.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes-4.6.0.html">NavCoin v4.6.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes-4.7.0.html">NavCoin v4.7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes-4.7.1.html">NavCoin v4.7.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes-4.7.2.html">NavCoin v4.7.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes-4.7.3.html">NavCoin v4.7.3 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes-5.0.0.html">NavCoin v5.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes-5.0.1.html">NavCoin v5.0.1 Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">NavCoin Core Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Modified client testing for cold-staking v4.5.0</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/release-notes/release-notes-4.5.0-additional-testing-notes/modified-coldstaking-client-notes-4.5.0.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="modified-client-testing-for-cold-staking-v4-5-0">
+<h1>Modified client testing for cold-staking v4.5.0<a class="headerlink" href="#modified-client-testing-for-cold-staking-v4-5-0" title="Permalink to this headline">¶</a></h1>
+<p><em>Date: 2018-12-03, 2018-12-04, 2018-12-05</em></p>
+<div class="section" id="modified-spending-wallet-to-stake-inputs">
+<h2>1. Modified spending wallet to stake inputs<a class="headerlink" href="#modified-spending-wallet-to-stake-inputs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="aim">
+<h3>Aim:<a class="headerlink" href="#aim" title="Permalink to this headline">¶</a></h3>
+<p>To test whether a modified wallet holding a spending key (but not staking key) can stake cold-staking inputs.</p>
+</div>
+<div class="section" id="wallet-setup">
+<h3>Wallet setup:<a class="headerlink" href="#wallet-setup" title="Permalink to this headline">¶</a></h3>
+<p>The subject wallet holds:</p>
+<ul class="simple">
+<li>The spending private key to a cold-staking address.</li>
+</ul>
+<p>Coins are held in the cold-staking address only. There are no other coins in any other addresses held by the wallet.</p>
+</div>
+<div class="section" id="modifications">
+<h3>Modifications:<a class="headerlink" href="#modifications" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>changed CreateCoinStake() in wallet.cpp (line 384) GetKey() from staking address to spending address, i.e. from
+<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(!keystore.GetKey(uint160(vSolutions[0]),</span> <span class="pre">key))</span></code> to <code class="docutils literal notranslate"> <span class="pre">if</span> <span class="pre">(!keystore.GetKey(uint160(vSolutions[1]),</span> <span class="pre">key))</span></code></li>
+<li>changed IsMine() in ismine.cpp (line 76 to 81) all conditional branches to return <code class="docutils literal notranslate"><span class="pre">ISMINE_SPENDABLE_STAKABLE</span></code> when case is <code class="docutils literal notranslate"><span class="pre">TX_COLDSTAKING</span></code></li>
+<li>changed SignStep() in sign.cpp (line 106) CKeyID() from staking address to spending address, i.e. from <code class="docutils literal notranslate"><span class="pre">keyID</span> <span class="pre">=</span> <span class="pre">CKeyID(uint160(fCoinStake</span> <span class="pre">?</span> <span class="pre">vSolutions[0]</span> <span class="pre">:</span> <span class="pre">vSolutions[1]));</span></code> to <code class="docutils literal notranslate"><span class="pre">keyID</span> <span class="pre">=</span> <span class="pre">CKeyID(uint160(fCoinStake</span> <span class="pre">?</span> <span class="pre">vSolutions[1]</span> <span class="pre">:</span> <span class="pre">vSolutions[1]));</span></code></li>
+<li>This will still return false from ProduceSignature() and cause the staking to fail because it will fail the checks in VerifyScript(), namely OP_EQUALSVERIFY, so
+- changed EvalScript() in interpreter.cpp (line 732) when entering conditional statement <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(opcode</span> <span class="pre">==</span> <span class="pre">OP_EQUALVERIFY)</span></code>, always <code class="docutils literal notranslate"><span class="pre">popstack(stack);</span></code> instead of <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">set_error(serror,</span> <span class="pre">SCRIPT_ERR_EQUALVERIFY);</span></code></li>
+</ul>
+<p>At the time of writing, the changes can be viewed here:<br /><a class="reference external" href="https://github.com/matt-auckland/navcoin-core/compare/cold-staking...marcus290:modified-spending-wallet">https://github.com/matt-auckland/navcoin-core/compare/cold-staking…marcus290:modified-spending-wallet</a></p>
+</div>
+<div class="section" id="result">
+<h3>Result:<a class="headerlink" href="#result" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The modified spending wallet will stake the cold-staking address inputs and broadcast blocks found to other nodes.</li>
+<li>But other nodes will reject these blocks and ban the peer (i.e. our wallet) from the network.</li>
+<li>The modified spending wallet will continue to stake and create its own blockchain.</li>
+<li>Log record:</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">28</span> <span class="n">CheckStake</span><span class="p">()</span> <span class="p">:</span> <span class="n">new</span> <span class="n">proof</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">stake</span> <span class="n">block</span> <span class="n">found</span> <span class="nb">hash</span><span class="p">:</span> <span class="mi">9</span><span class="n">ec735c1ea6c020fe5b55de17898b4fbd67091eefd27f5afde8797e7612ecb06</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">28</span> <span class="n">UpdateTip</span><span class="p">:</span> <span class="n">new</span> <span class="n">best</span><span class="o">=</span><span class="mi">9</span><span class="n">ec735c1ea6c020fe5b55de17898b4fbd67091eefd27f5afde8797e7612ecb06</span> <span class="n">height</span><span class="o">=</span><span class="mi">69274</span> <span class="n">version</span><span class="o">=</span><span class="mh">0x710171f1</span> <span class="n">log2_work</span><span class="o">=</span><span class="mf">85.821494</span> <span class="n">tx</span><span class="o">=</span><span class="mi">134912</span> <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2018-12-05 02:07:28&#39;</span> <span class="n">progress</span><span class="o">=</span><span class="mf">1.000000</span> <span class="n">cache</span><span class="o">=</span><span class="mf">0.0</span><span class="n">MiB</span><span class="p">(</span><span class="mi">29</span><span class="n">tx</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">28</span> <span class="n">AddToWallet</span> <span class="mi">597</span><span class="n">c8f7bdb79c7d906b0fd15bda4f8039fdc2e01d07e9381f1d83359650bc548</span>  <span class="n">new</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">29</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="n">d99a</span><span class="p">:</span><span class="n">d453</span><span class="p">:</span><span class="n">b9cf</span><span class="p">:</span><span class="mi">6196</span><span class="p">]:</span><span class="mi">15556</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Network</span> <span class="ow">is</span> <span class="n">unreachable</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">29</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">7</span><span class="n">ee3</span><span class="p">:</span><span class="mi">755</span><span class="n">a</span><span class="p">:</span><span class="n">be36</span><span class="p">:</span><span class="n">a5c0</span><span class="p">]:</span><span class="mi">15556</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Network</span> <span class="ow">is</span> <span class="n">unreachable</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">31</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">7</span><span class="n">ee3</span><span class="p">:</span><span class="mi">755</span><span class="n">a</span><span class="p">:</span><span class="n">be36</span><span class="p">:</span><span class="n">a5c0</span><span class="p">]:</span><span class="mi">15556</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Network</span> <span class="ow">is</span> <span class="n">unreachable</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">32</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="mf">103.247</span><span class="o">.</span><span class="mf">155.206</span><span class="p">:</span><span class="mi">15556</span> <span class="n">failed</span> <span class="n">after</span> <span class="n">select</span><span class="p">():</span> <span class="n">Connection</span> <span class="n">refused</span> <span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">33</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">7</span><span class="n">ee3</span><span class="p">:</span><span class="mi">755</span><span class="n">a</span><span class="p">:</span><span class="n">be36</span><span class="p">:</span><span class="n">a5c0</span><span class="p">]:</span><span class="mi">15556</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Network</span> <span class="ow">is</span> <span class="n">unreachable</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">37</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="mf">103.247</span><span class="o">.</span><span class="mf">155.206</span><span class="p">:</span><span class="mi">15556</span> <span class="n">failed</span> <span class="n">after</span> <span class="n">select</span><span class="p">():</span> <span class="n">Connection</span> <span class="n">refused</span> <span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">40</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">7</span><span class="n">ee3</span><span class="p">:</span><span class="mi">755</span><span class="n">a</span><span class="p">:</span><span class="n">be36</span><span class="p">:</span><span class="n">a5c0</span><span class="p">]:</span><span class="mi">15556</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Network</span> <span class="ow">is</span> <span class="n">unreachable</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">50</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="mf">103.247</span><span class="o">.</span><span class="mf">155.206</span><span class="p">:</span><span class="mi">15556</span> <span class="n">failed</span> <span class="n">after</span> <span class="n">select</span><span class="p">():</span> <span class="n">Connection</span> <span class="n">refused</span> <span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">52</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">7</span><span class="n">ee3</span><span class="p">:</span><span class="mi">755</span><span class="n">a</span><span class="p">:</span><span class="n">be36</span><span class="p">:</span><span class="n">a5c0</span><span class="p">]:</span><span class="mi">15556</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Network</span> <span class="ow">is</span> <span class="n">unreachable</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">53</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="mf">103.247</span><span class="o">.</span><span class="mf">155.206</span><span class="p">:</span><span class="mi">15556</span> <span class="n">failed</span> <span class="n">after</span> <span class="n">select</span><span class="p">():</span> <span class="n">Connection</span> <span class="n">refused</span> <span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">54</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="n">d99a</span><span class="p">:</span><span class="n">d453</span><span class="p">:</span><span class="n">b9cf</span><span class="p">:</span><span class="mi">6196</span><span class="p">]:</span><span class="mi">15556</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Network</span> <span class="ow">is</span> <span class="n">unreachable</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">55</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="mf">103.247</span><span class="o">.</span><span class="mf">155.206</span><span class="p">:</span><span class="mi">15556</span> <span class="n">failed</span> <span class="n">after</span> <span class="n">select</span><span class="p">():</span> <span class="n">Connection</span> <span class="n">refused</span> <span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">07</span><span class="p">:</span><span class="mi">57</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="n">d99a</span><span class="p">:</span><span class="n">d453</span><span class="p">:</span><span class="n">b9cf</span><span class="p">:</span><span class="mi">6196</span><span class="p">]:</span><span class="mi">15556</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Network</span> <span class="ow">is</span> <span class="n">unreachable</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">01</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="mf">103.247</span><span class="o">.</span><span class="mf">155.206</span><span class="p">:</span><span class="mi">15556</span> <span class="n">failed</span> <span class="n">after</span> <span class="n">select</span><span class="p">():</span> <span class="n">Connection</span> <span class="n">refused</span> <span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">02</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="mf">103.247</span><span class="o">.</span><span class="mf">155.206</span><span class="p">:</span><span class="mi">15556</span> <span class="n">failed</span> <span class="n">after</span> <span class="n">select</span><span class="p">():</span> <span class="n">Connection</span> <span class="n">refused</span> <span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">04</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="mf">103.247</span><span class="o">.</span><span class="mf">155.206</span><span class="p">:</span><span class="mi">15556</span> <span class="n">failed</span> <span class="n">after</span> <span class="n">select</span><span class="p">():</span> <span class="n">Connection</span> <span class="n">refused</span> <span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">05</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">7</span><span class="n">ee3</span><span class="p">:</span><span class="mi">755</span><span class="n">a</span><span class="p">:</span><span class="n">be36</span><span class="p">:</span><span class="n">a5c0</span><span class="p">]:</span><span class="mi">15556</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Network</span> <span class="ow">is</span> <span class="n">unreachable</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">05</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">7</span><span class="n">ee3</span><span class="p">:</span><span class="mi">755</span><span class="n">a</span><span class="p">:</span><span class="n">be36</span><span class="p">:</span><span class="n">a5c0</span><span class="p">]:</span><span class="mi">15556</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Network</span> <span class="ow">is</span> <span class="n">unreachable</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">06</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="n">d99a</span><span class="p">:</span><span class="n">d453</span><span class="p">:</span><span class="n">b9cf</span><span class="p">:</span><span class="mi">6196</span><span class="p">]:</span><span class="mi">15556</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Network</span> <span class="ow">is</span> <span class="n">unreachable</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">07</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="n">d99a</span><span class="p">:</span><span class="n">d453</span><span class="p">:</span><span class="n">b9cf</span><span class="p">:</span><span class="mi">6196</span><span class="p">]:</span><span class="mi">15556</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Network</span> <span class="ow">is</span> <span class="n">unreachable</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">09</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="mf">103.247</span><span class="o">.</span><span class="mf">155.206</span><span class="p">:</span><span class="mi">15556</span> <span class="n">failed</span> <span class="n">after</span> <span class="n">select</span><span class="p">():</span> <span class="n">Connection</span> <span class="n">refused</span> <span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">09</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="n">d99a</span><span class="p">:</span><span class="n">d453</span><span class="p">:</span><span class="n">b9cf</span><span class="p">:</span><span class="mi">6196</span><span class="p">]:</span><span class="mi">15556</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Network</span> <span class="ow">is</span> <span class="n">unreachable</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">11</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">7</span><span class="n">ee3</span><span class="p">:</span><span class="mi">755</span><span class="n">a</span><span class="p">:</span><span class="n">be36</span><span class="p">:</span><span class="n">a5c0</span><span class="p">]:</span><span class="mi">15556</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Network</span> <span class="ow">is</span> <span class="n">unreachable</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">12</span> <span class="n">socket</span> <span class="n">recv</span> <span class="n">error</span> <span class="n">Connection</span> <span class="n">reset</span> <span class="n">by</span> <span class="n">peer</span> <span class="p">(</span><span class="mi">104</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">14</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">7</span><span class="n">ee3</span><span class="p">:</span><span class="mi">755</span><span class="n">a</span><span class="p">:</span><span class="n">be36</span><span class="p">:</span><span class="n">a5c0</span><span class="p">]:</span><span class="mi">15556</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Network</span> <span class="ow">is</span> <span class="n">unreachable</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">05</span> <span class="mi">02</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">14</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">7</span><span class="n">ee3</span><span class="p">:</span><span class="mi">755</span><span class="n">a</span><span class="p">:</span><span class="n">be36</span><span class="p">:</span><span class="n">a5c0</span><span class="p">]:</span><span class="mi">15556</span> <span class="n">failed</span><span class="p">:</span> <span class="n">Network</span> <span class="ow">is</span> <span class="n">unreachable</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h3>Conclusion:<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h3>
+<p>Based on the modifications above, blocks staked by the modified wallet will be rejected by the network.</p>
+</div>
+</div>
+<div class="section" id="modified-staking-wallet-to-send-staking-outputs-to-another-address">
+<h2>2. Modified staking wallet to send staking outputs to another address<a class="headerlink" href="#modified-staking-wallet-to-send-staking-outputs-to-another-address" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Aim:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>To test whether a modified wallet holding a staking key (but not spending key) can send staking outputs to another address.</p>
+</div>
+<div class="section" id="id2">
+<h3>Wallet setup:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>The subject wallet holds:</p>
+<ul class="simple">
+<li>The staking private key to a cold-staking address.</li>
+<li>The private key to another address, not related to the cold-staking address (“<strong>Address X</strong>”).</li>
+</ul>
+<p>Coins are held in the cold-staking address only. There are no other coins in any other addresses held by the wallet.</p>
+</div>
+<div class="section" id="id3">
+<h3>Modifications:<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>changed CreateCoinStake() in wallet.cpp (line 390) scripting for cold-staking from <code class="docutils literal notranslate"><span class="pre">scriptPubKeyOut</span> <span class="pre">=</span> <span class="pre">scriptPubKeyKernel;</span></code> to <code class="docutils literal notranslate"><span class="pre">scriptPubKeyOut</span> <span class="pre">=</span> <span class="pre">CScript(ToByteVector([newkey].GetPubKey()));</span> <span class="pre">scriptPubKeyOut</span> <span class="pre">&lt;&lt;</span> <span class="pre">OP_CHECKSIG;</span></code> where <code class="docutils literal notranslate"><span class="pre">[newkey]</span></code> is the key to Address X.</li>
+<li>changed CheckProofOfStake() in main.cpp (lines 8655-8659) removing all checks for when IsColdStaking() is true.</li>
+</ul>
+<p>At the time of writing, the changes can be viewed here:<br /><a class="reference external" href="https://github.com/matt-auckland/navcoin-core/compare/cold-staking...marcus290:modified-staking-wallet-stake">https://github.com/matt-auckland/navcoin-core/compare/cold-staking…marcus290:modified-staking-wallet-stake</a></p>
+</div>
+<div class="section" id="id4">
+<h3>Result:<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The modified staking wallet will continue to stake.</li>
+<li>At the first successful stake by the wallet, the staking output (i.e. staking reward + cold-staking balance) will be sent to Address X, and the stake will be broadcast to other nodes.</li>
+<li>But other nodes will reject these stakes.</li>
+<li>The modified staking wallet will re-sync with the network and all its stakes will be orphaned.</li>
+<li>Log record:</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">00</span> <span class="n">CheckStake</span><span class="p">()</span> <span class="p">:</span> <span class="n">new</span> <span class="n">proof</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">stake</span> <span class="n">block</span> <span class="n">found</span> <span class="nb">hash</span><span class="p">:</span> <span class="n">ba0484285df2c38def7581a989ebb00ef784bc7652526d9a92bc39fc8c91d764</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">00</span> <span class="n">UpdateTip</span><span class="p">:</span> <span class="n">new</span> <span class="n">best</span><span class="o">=</span><span class="n">ba0484285df2c38def7581a989ebb00ef784bc7652526d9a92bc39fc8c91d764</span> <span class="n">height</span><span class="o">=</span><span class="mi">66629</span> <span class="n">version</span><span class="o">=</span><span class="mh">0x7101f1f1</span> <span class="n">log2_work</span><span class="o">=</span><span class="mf">85.821494</span> <span class="n">tx</span><span class="o">=</span><span class="mi">129619</span> <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2018-12-04 03:44:00&#39;</span> <span class="n">progress</span><span class="o">=</span><span class="mf">1.000000</span> <span class="n">cache</span><span class="o">=</span><span class="mf">0.0</span><span class="n">MiB</span><span class="p">(</span><span class="mi">136</span><span class="n">tx</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">00</span> <span class="n">AddToWallet</span> <span class="mi">88</span><span class="n">de5054da44fc8ad4f3e9f3cd1d9aa5b84c018df52d6f788869e89fd9892b66</span>  <span class="n">new</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">49</span> <span class="n">UpdateTip</span><span class="p">:</span> <span class="n">new</span> <span class="n">best</span><span class="o">=</span><span class="n">d647c2fbb9f0be80ba064a7c68a30f7a3ada9d68e95c57ed2506e0def4a5d7fb</span> <span class="n">height</span><span class="o">=</span><span class="mi">66628</span> <span class="n">version</span><span class="o">=</span><span class="mh">0x710171f1</span> <span class="n">log2_work</span><span class="o">=</span><span class="mf">85.821494</span> <span class="n">tx</span><span class="o">=</span><span class="mi">129617</span> <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2018-12-04 03:43:44&#39;</span> <span class="n">progress</span><span class="o">=</span><span class="mf">0.999959</span> <span class="n">cache</span><span class="o">=</span><span class="mf">0.0</span><span class="n">MiB</span><span class="p">(</span><span class="mi">136</span><span class="n">tx</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">49</span> <span class="n">SyncTransaction</span> <span class="p">:</span> <span class="n">Refunding</span> <span class="n">inputs</span> <span class="n">of</span> <span class="n">orphan</span> <span class="n">tx</span> <span class="mi">88</span><span class="n">de5054da44fc8ad4f3e9f3cd1d9aa5b84c018df52d6f788869e89fd9892b66</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">49</span> <span class="n">AddToWallet</span> <span class="mi">88</span><span class="n">de5054da44fc8ad4f3e9f3cd1d9aa5b84c018df52d6f788869e89fd9892b66</span>  
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">49</span> <span class="n">SyncTransaction</span> <span class="p">:</span> <span class="n">Removing</span> <span class="n">tx</span> <span class="mi">88</span><span class="n">de5054da44fc8ad4f3e9f3cd1d9aa5b84c018df52d6f788869e89fd9892b66</span> <span class="kn">from</span> <span class="nn">mapTxSpends</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">49</span> <span class="n">UpdateTip</span><span class="p">:</span> <span class="n">new</span> <span class="n">best</span><span class="o">=</span><span class="mi">2</span><span class="n">c6fbcf8d9fe08e7b34d8aeffd552c321d3d807e135fdea5d3470e93578ed8c8</span> <span class="n">height</span><span class="o">=</span><span class="mi">66627</span> <span class="n">version</span><span class="o">=</span><span class="mh">0x710171f1</span> <span class="n">log2_work</span><span class="o">=</span><span class="mf">85.821494</span> <span class="n">tx</span><span class="o">=</span><span class="mi">129615</span> <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2018-12-04 03:43:12&#39;</span> <span class="n">progress</span><span class="o">=</span><span class="mf">0.999939</span> <span class="n">cache</span><span class="o">=</span><span class="mf">0.0</span><span class="n">MiB</span><span class="p">(</span><span class="mi">135</span><span class="n">tx</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">49</span> <span class="n">UpdateTip</span><span class="p">:</span> <span class="n">new</span> <span class="n">best</span><span class="o">=</span><span class="mi">7</span><span class="n">fb237026243f2736cdd40435130d576a6b3104406c9be0e79a648bc7c20c018</span> <span class="n">height</span><span class="o">=</span><span class="mi">66628</span> <span class="n">version</span><span class="o">=</span><span class="mh">0x710171f1</span> <span class="n">log2_work</span><span class="o">=</span><span class="mf">85.821494</span> <span class="n">tx</span><span class="o">=</span><span class="mi">129617</span> <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2018-12-04 03:43:44&#39;</span> <span class="n">progress</span><span class="o">=</span><span class="mf">0.999959</span> <span class="n">cache</span><span class="o">=</span><span class="mf">0.0</span><span class="n">MiB</span><span class="p">(</span><span class="mi">137</span><span class="n">tx</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">50</span> <span class="n">UpdateTip</span><span class="p">:</span> <span class="n">new</span> <span class="n">best</span><span class="o">=</span><span class="mi">310</span><span class="n">d44343a977ae806b57130d91ab884c54b4af720578abc4c75770f29c87473</span> <span class="n">height</span><span class="o">=</span><span class="mi">66629</span> <span class="n">version</span><span class="o">=</span><span class="mh">0x710171f1</span> <span class="n">log2_work</span><span class="o">=</span><span class="mf">85.821494</span> <span class="n">tx</span><span class="o">=</span><span class="mi">129619</span> <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2018-12-04 03:44:00&#39;</span> <span class="n">progress</span><span class="o">=</span><span class="mf">0.999969</span> <span class="n">cache</span><span class="o">=</span><span class="mf">0.0</span><span class="n">MiB</span><span class="p">(</span><span class="mi">139</span><span class="n">tx</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">50</span> <span class="n">UpdateTip</span><span class="p">:</span> <span class="n">new</span> <span class="n">best</span><span class="o">=</span><span class="n">dab8fa0bf6b0f8e2a1e9d01f75912413af99788bdd43f7f32088c7410ff3951c</span> <span class="n">height</span><span class="o">=</span><span class="mi">66630</span> <span class="n">version</span><span class="o">=</span><span class="mh">0x710171f1</span> <span class="n">log2_work</span><span class="o">=</span><span class="mf">85.821494</span> <span class="n">tx</span><span class="o">=</span><span class="mi">129621</span> <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2018-12-04 03:44:48&#39;</span> <span class="n">progress</span><span class="o">=</span><span class="mf">0.999999</span> <span class="n">cache</span><span class="o">=</span><span class="mf">0.0</span><span class="n">MiB</span><span class="p">(</span><span class="mi">142</span><span class="n">tx</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">04</span> <span class="n">CheckStake</span><span class="p">()</span> <span class="p">:</span> <span class="n">new</span> <span class="n">proof</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">stake</span> <span class="n">block</span> <span class="n">found</span> <span class="nb">hash</span><span class="p">:</span> <span class="mi">0</span><span class="n">b26c39e07b56ab8cea0e74a6d2cdbda1f15bc6a98054b93187e3ec1bef1feed</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">04</span> <span class="n">UpdateTip</span><span class="p">:</span> <span class="n">new</span> <span class="n">best</span><span class="o">=</span><span class="mi">0</span><span class="n">b26c39e07b56ab8cea0e74a6d2cdbda1f15bc6a98054b93187e3ec1bef1feed</span> <span class="n">height</span><span class="o">=</span><span class="mi">66631</span> <span class="n">version</span><span class="o">=</span><span class="mh">0x7101f1f1</span> <span class="n">log2_work</span><span class="o">=</span><span class="mf">85.821494</span> <span class="n">tx</span><span class="o">=</span><span class="mi">129623</span> <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2018-12-04 03:45:04&#39;</span> <span class="n">progress</span><span class="o">=</span><span class="mf">1.000000</span> <span class="n">cache</span><span class="o">=</span><span class="mf">0.0</span><span class="n">MiB</span><span class="p">(</span><span class="mi">143</span><span class="n">tx</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">04</span> <span class="n">AddToWallet</span> <span class="mi">11</span><span class="n">cc895db90b260933718e05e3d2ef4783a70208f24f5a326abf03803ce36b33</span>  <span class="n">new</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">36</span> <span class="n">CheckStake</span><span class="p">()</span> <span class="p">:</span> <span class="n">new</span> <span class="n">proof</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">stake</span> <span class="n">block</span> <span class="n">found</span> <span class="nb">hash</span><span class="p">:</span> <span class="n">ca29e549b6afecd87b39847ace6e9b73cc8ceed7049e6b5e013f41a18f94bb6a</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">36</span> <span class="n">UpdateTip</span><span class="p">:</span> <span class="n">new</span> <span class="n">best</span><span class="o">=</span><span class="n">ca29e549b6afecd87b39847ace6e9b73cc8ceed7049e6b5e013f41a18f94bb6a</span> <span class="n">height</span><span class="o">=</span><span class="mi">66632</span> <span class="n">version</span><span class="o">=</span><span class="mh">0x7101f1f1</span> <span class="n">log2_work</span><span class="o">=</span><span class="mf">85.821494</span> <span class="n">tx</span><span class="o">=</span><span class="mi">129625</span> <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2018-12-04 03:45:36&#39;</span> <span class="n">progress</span><span class="o">=</span><span class="mf">1.000000</span> <span class="n">cache</span><span class="o">=</span><span class="mf">0.0</span><span class="n">MiB</span><span class="p">(</span><span class="mi">145</span><span class="n">tx</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">36</span> <span class="n">AddToWallet</span> <span class="mi">0</span><span class="n">c9503ec50c3cdf297ee7818cd6e9d20d1187e3289725573b3decef0319791f9</span>  <span class="n">new</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">53</span> <span class="n">UpdateTip</span><span class="p">:</span> <span class="n">new</span> <span class="n">best</span><span class="o">=</span><span class="mi">0</span><span class="n">b26c39e07b56ab8cea0e74a6d2cdbda1f15bc6a98054b93187e3ec1bef1feed</span> <span class="n">height</span><span class="o">=</span><span class="mi">66631</span> <span class="n">version</span><span class="o">=</span><span class="mh">0x7101f1f1</span> <span class="n">log2_work</span><span class="o">=</span><span class="mf">85.821494</span> <span class="n">tx</span><span class="o">=</span><span class="mi">129623</span> <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2018-12-04 03:45:04&#39;</span> <span class="n">progress</span><span class="o">=</span><span class="mf">0.999969</span> <span class="n">cache</span><span class="o">=</span><span class="mf">0.0</span><span class="n">MiB</span><span class="p">(</span><span class="mi">144</span><span class="n">tx</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">53</span> <span class="n">SyncTransaction</span> <span class="p">:</span> <span class="n">Refunding</span> <span class="n">inputs</span> <span class="n">of</span> <span class="n">orphan</span> <span class="n">tx</span> <span class="mi">0</span><span class="n">c9503ec50c3cdf297ee7818cd6e9d20d1187e3289725573b3decef0319791f9</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">53</span> <span class="n">AddToWallet</span> <span class="mi">0</span><span class="n">c9503ec50c3cdf297ee7818cd6e9d20d1187e3289725573b3decef0319791f9</span>  
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">53</span> <span class="n">SyncTransaction</span> <span class="p">:</span> <span class="n">Removing</span> <span class="n">tx</span> <span class="mi">0</span><span class="n">c9503ec50c3cdf297ee7818cd6e9d20d1187e3289725573b3decef0319791f9</span> <span class="kn">from</span> <span class="nn">mapTxSpends</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">53</span> <span class="n">UpdateTip</span><span class="p">:</span> <span class="n">new</span> <span class="n">best</span><span class="o">=</span><span class="n">dab8fa0bf6b0f8e2a1e9d01f75912413af99788bdd43f7f32088c7410ff3951c</span> <span class="n">height</span><span class="o">=</span><span class="mi">66630</span> <span class="n">version</span><span class="o">=</span><span class="mh">0x710171f1</span> <span class="n">log2_work</span><span class="o">=</span><span class="mf">85.821494</span> <span class="n">tx</span><span class="o">=</span><span class="mi">129621</span> <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2018-12-04 03:44:48&#39;</span> <span class="n">progress</span><span class="o">=</span><span class="mf">0.999959</span> <span class="n">cache</span><span class="o">=</span><span class="mf">0.0</span><span class="n">MiB</span><span class="p">(</span><span class="mi">144</span><span class="n">tx</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">53</span> <span class="n">SyncTransaction</span> <span class="p">:</span> <span class="n">Refunding</span> <span class="n">inputs</span> <span class="n">of</span> <span class="n">orphan</span> <span class="n">tx</span> <span class="mi">11</span><span class="n">cc895db90b260933718e05e3d2ef4783a70208f24f5a326abf03803ce36b33</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">53</span> <span class="n">AddToWallet</span> <span class="mi">11</span><span class="n">cc895db90b260933718e05e3d2ef4783a70208f24f5a326abf03803ce36b33</span>  
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">53</span> <span class="n">SyncTransaction</span> <span class="p">:</span> <span class="n">Removing</span> <span class="n">tx</span> <span class="mi">11</span><span class="n">cc895db90b260933718e05e3d2ef4783a70208f24f5a326abf03803ce36b33</span> <span class="kn">from</span> <span class="nn">mapTxSpends</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">53</span> <span class="n">UpdateTip</span><span class="p">:</span> <span class="n">new</span> <span class="n">best</span><span class="o">=</span><span class="mi">0</span><span class="n">faf8ff5b51df87d382de126b17b1871d03d7b52e43dc26363f6d35654faab95</span> <span class="n">height</span><span class="o">=</span><span class="mi">66631</span> <span class="n">version</span><span class="o">=</span><span class="mh">0x710171f1</span> <span class="n">log2_work</span><span class="o">=</span><span class="mf">85.821494</span> <span class="n">tx</span><span class="o">=</span><span class="mi">129623</span> <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2018-12-04 03:45:04&#39;</span> <span class="n">progress</span><span class="o">=</span><span class="mf">0.999969</span> <span class="n">cache</span><span class="o">=</span><span class="mf">0.0</span><span class="n">MiB</span><span class="p">(</span><span class="mi">146</span><span class="n">tx</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">03</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mi">54</span> <span class="n">UpdateTip</span><span class="p">:</span> <span class="n">new</span> <span class="n">best</span><span class="o">=</span><span class="n">f62850ba69ea4b5d9ca2111a71190bdaf9c673d0a1af2c8ae03cc1a8af5a298c</span> <span class="n">height</span><span class="o">=</span><span class="mi">66632</span> <span class="n">version</span><span class="o">=</span><span class="mh">0x710171f1</span> <span class="n">log2_work</span><span class="o">=</span><span class="mf">85.821494</span> <span class="n">tx</span><span class="o">=</span><span class="mi">129625</span> <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2018-12-04 03:45:36&#39;</span> <span class="n">progress</span><span class="o">=</span><span class="mf">0.999989</span> <span class="n">cache</span><span class="o">=</span><span class="mf">0.0</span><span class="n">MiB</span><span class="p">(</span><span class="mi">148</span><span class="n">tx</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>Conclusion:<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Based on the modifications above, blocks staked by the modified wallet will be rejected by the network.</p>
+</div>
+</div>
+<div class="section" id="modified-staking-wallet-to-spend-inputs">
+<h2>3. Modified staking wallet to spend inputs<a class="headerlink" href="#modified-staking-wallet-to-spend-inputs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>Aim:<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>To test whether a modified wallet with a staking key can spend cold-staking inputs.</p>
+</div>
+<div class="section" id="id7">
+<h3>Wallet setup:<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>The subject wallet holds:</p>
+<ul class="simple">
+<li>The staking private key to a cold-staking address.</li>
+</ul>
+<p>Coins are held in the cold-staking address only. There are no other coins in any other addresses held by the wallet.</p>
+</div>
+<div class="section" id="id8">
+<h3>Modifications:<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>changed SelectCoinsMinConf() and SelectCoins() in wallet.cpp (lines 2518-2519, 2612-2613) removed <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(!output.fSpendable)</span> <span class="pre">continue;</span></code></li>
+<li>changed IsMine() in ismine.cpp (lines 63, 76-81) all conditional branches to return <code class="docutils literal notranslate"><span class="pre">ISMINE_SPENDABLE_STAKABLE</span></code> when case is <code class="docutils literal notranslate"><span class="pre">TX_COLDSTAKING</span></code> and <code class="docutils literal notranslate"><span class="pre">TX_PUBKEY</span></code></li>
+<li>changed SignStep() in sign.cpp (line 106) CKeyID() from spending address to staking address, i.e. from <code class="docutils literal notranslate"><span class="pre">keyID</span> <span class="pre">=</span> <span class="pre">CKeyID(uint160(fCoinStake</span> <span class="pre">?</span> <span class="pre">vSolutions[0]</span> <span class="pre">:</span> <span class="pre">vSolutions[1]));</span></code> to <code class="docutils literal notranslate"><span class="pre">keyID</span> <span class="pre">=</span> <span class="pre">CKeyID(uint160(fCoinStake</span> <span class="pre">?</span> <span class="pre">vSolutions[0]</span> <span class="pre">:</span> <span class="pre">vSolutions[0]));</span></code></li>
+<li>This will still return false from ProduceSignature() and cause the staking to fail because it will fail the checks in VerifyScript(), namely OP_EQUALSVERIFY, so<ul>
+<li>changed EvalScript() in interpreter.cpp (line 732) when entering conditional statement <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(opcode</span> <span class="pre">==</span> <span class="pre">OP_EQUALVERIFY)</span></code>, always <code class="docutils literal notranslate"><span class="pre">popstack(stack);</span></code> instead of <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">set_error(serror,</span> <span class="pre">SCRIPT_ERR_EQUALVERIFY);</span></code></li>
+</ul>
+</li>
+</ul>
+<p>At the time of writing, the changes can be viewed here:<br /><a class="reference external" href="https://github.com/matt-auckland/navcoin-core/compare/cold-staking...marcus290:modified-staking-wallet-spend">https://github.com/matt-auckland/navcoin-core/compare/cold-staking…marcus290:modified-staking-wallet-spend</a></p>
+</div>
+<div class="section" id="id9">
+<h3>Result:<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The modified staking wallet can spend the cold-staking address inputs and broadcast these transactions to other nodes.</li>
+<li>But other nodes will reject these transactions and ban the peer (i.e. our wallet) from the network.</li>
+<li>The modified staking wallet will continue to stake and create its own blockchain.</li>
+<li>Log record:</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span><span class="mi">40</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="mf">103.247</span><span class="o">.</span><span class="mf">155.206</span><span class="p">:</span><span class="mi">15556</span> <span class="n">failed</span> <span class="n">after</span> <span class="n">select</span><span class="p">():</span> <span class="n">Connection</span> <span class="n">refused</span> <span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span><span class="mi">52</span> <span class="n">UpdateTip</span><span class="p">:</span> <span class="n">new</span> <span class="n">best</span><span class="o">=</span><span class="mi">0012</span><span class="n">bb917db9e27c7705e31bb428f4f9f4620814d3ca2f5f7b0ec217ee4aee9e</span> <span class="n">height</span><span class="o">=</span><span class="mi">66689</span> <span class="n">version</span><span class="o">=</span><span class="mh">0x710171f1</span> <span class="n">log2_work</span><span class="o">=</span><span class="mf">85.821494</span> <span class="n">tx</span><span class="o">=</span><span class="mi">129739</span> <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2018-12-04 04:13:52&#39;</span> <span class="n">progress</span><span class="o">=</span><span class="mf">1.000000</span> <span class="n">cache</span><span class="o">=</span><span class="mf">0.0</span><span class="n">MiB</span><span class="p">(</span><span class="mi">19</span><span class="n">tx</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">01</span> <span class="n">keypool</span> <span class="n">reserve</span> <span class="mi">4</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">01</span> <span class="n">CommitTransaction</span><span class="p">:</span>
+<span class="n">CTransaction</span><span class="p">(</span><span class="nb">hash</span><span class="o">=</span><span class="mf">0e86</span><span class="n">a8f71b8a3b580935cb790c1fce039d9243b867f29564a76ee316f3c8f593</span><span class="p">,</span> <span class="n">nTime</span><span class="o">=</span><span class="mi">1543896841</span><span class="p">,</span> <span class="n">ver</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">vin</span><span class="o">.</span><span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">vout</span><span class="o">.</span><span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nLockTime</span><span class="o">=</span><span class="mi">66689</span><span class="p">),</span> <span class="n">strDZeel</span><span class="o">=</span><span class="n">fQgWJaM0usxdF8p1zediWS6yiqCYiT</span><span class="p">)</span>
+    <span class="n">CTxIn</span><span class="p">(</span><span class="n">COutPoint</span><span class="p">(</span><span class="n">b71b2409fb</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">scriptSig</span><span class="o">=</span><span class="mi">47304402202</span><span class="n">a9db7180af8a9</span><span class="p">,</span> <span class="n">nSequence</span><span class="o">=</span><span class="mi">4294967294</span><span class="p">)</span>
+    <span class="n">CTxOut</span><span class="p">(</span><span class="n">nValue</span><span class="o">=</span><span class="mf">48011.64988460</span><span class="p">,</span> <span class="n">scriptPubKey</span><span class="o">=</span><span class="n">OP_DUP</span> <span class="n">OP_HASH160</span> <span class="n">de88eb286c4e9cab6e772f488b52ddc596ba55d7</span> <span class="n">OP_EQUALVERIFY</span> <span class="n">OP_CHECKSIG</span><span class="p">)</span>
+    <span class="n">CTxOut</span><span class="p">(</span><span class="n">nValue</span><span class="o">=</span><span class="mf">100000.00000000</span><span class="p">,</span> <span class="n">scriptPubKey</span><span class="o">=</span><span class="n">OP_DUP</span> <span class="n">OP_HASH160</span> <span class="mi">9194</span><span class="n">ae60493f6492a4662133eb3b05894830c3f7</span> <span class="n">OP_EQUALVERIFY</span> <span class="n">OP_CHECKSIG</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">01</span> <span class="n">keypool</span> <span class="n">keep</span> <span class="mi">4</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">01</span> <span class="n">AddToWallet</span> <span class="mf">0e86</span><span class="n">a8f71b8a3b580935cb790c1fce039d9243b867f29564a76ee316f3c8f593</span>  <span class="n">new</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">02</span> <span class="n">AddToWallet</span> <span class="mf">0e86</span><span class="n">a8f71b8a3b580935cb790c1fce039d9243b867f29564a76ee316f3c8f593</span>  
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">02</span> <span class="n">Relaying</span> <span class="n">wtx</span> <span class="mf">0e86</span><span class="n">a8f71b8a3b580935cb790c1fce039d9243b867f29564a76ee316f3c8f593</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">04</span> <span class="n">socket</span> <span class="n">recv</span> <span class="n">error</span> <span class="n">Connection</span> <span class="n">reset</span> <span class="n">by</span> <span class="n">peer</span> <span class="p">(</span><span class="mi">104</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">09</span> <span class="n">UpdateTip</span><span class="p">:</span> <span class="n">new</span> <span class="n">best</span><span class="o">=</span><span class="mi">6157</span><span class="n">ee14743db35d1de569c1a39cc4e1b1137f3b87c9fb75dc74fa7d72133c06</span> <span class="n">height</span><span class="o">=</span><span class="mi">66690</span> <span class="n">version</span><span class="o">=</span><span class="mh">0x710171f1</span> <span class="n">log2_work</span><span class="o">=</span><span class="mf">85.821494</span> <span class="n">tx</span><span class="o">=</span><span class="mi">129741</span> <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2018-12-04 04:14:08&#39;</span> <span class="n">progress</span><span class="o">=</span><span class="mf">0.999999</span> <span class="n">cache</span><span class="o">=</span><span class="mf">0.0</span><span class="n">MiB</span><span class="p">(</span><span class="mi">22</span><span class="n">tx</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">25</span> <span class="n">receive</span> <span class="n">version</span> <span class="n">message</span><span class="p">:</span> <span class="o">/</span><span class="n">NavCoin</span><span class="p">:</span><span class="mf">4.4</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="p">:</span> <span class="n">version</span> <span class="mi">70020</span><span class="p">,</span> <span class="n">blocks</span><span class="o">=</span><span class="mi">66690</span><span class="p">,</span> <span class="n">us</span><span class="o">=</span><span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">7</span><span class="n">ee3</span><span class="p">:</span><span class="mi">755</span><span class="n">a</span><span class="p">:</span><span class="n">be36</span><span class="p">:</span><span class="n">a5c0</span><span class="p">]:</span><span class="mi">15556</span><span class="p">,</span> <span class="n">peer</span><span class="o">=</span><span class="mi">5</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">25</span> <span class="n">AdvertiseLocal</span><span class="p">:</span> <span class="n">advertising</span> <span class="n">address</span> <span class="p">[</span><span class="mi">2403</span><span class="p">:</span><span class="mi">4</span><span class="n">d00</span><span class="p">:</span><span class="mi">301</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">7</span><span class="n">ee3</span><span class="p">:</span><span class="mi">755</span><span class="n">a</span><span class="p">:</span><span class="n">be36</span><span class="p">:</span><span class="n">a5c0</span><span class="p">]:</span><span class="mi">15556</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">26</span> <span class="n">CheckStake</span><span class="p">()</span> <span class="p">:</span> <span class="n">new</span> <span class="n">proof</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">stake</span> <span class="n">block</span> <span class="n">found</span> <span class="nb">hash</span><span class="p">:</span> <span class="mi">7679</span><span class="n">f66ced702c32db7f20227f56fae863a4d093758458daf3643a84976962ee</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">26</span> <span class="n">UpdateTip</span><span class="p">:</span> <span class="n">new</span> <span class="n">best</span><span class="o">=</span><span class="mi">7679</span><span class="n">f66ced702c32db7f20227f56fae863a4d093758458daf3643a84976962ee</span> <span class="n">height</span><span class="o">=</span><span class="mi">66691</span> <span class="n">version</span><span class="o">=</span><span class="mh">0x7101f1f1</span> <span class="n">log2_work</span><span class="o">=</span><span class="mf">85.821494</span> <span class="n">tx</span><span class="o">=</span><span class="mi">129744</span> <span class="n">date</span><span class="o">=</span><span class="s1">&#39;2018-12-04 04:18:24&#39;</span> <span class="n">progress</span><span class="o">=</span><span class="mf">0.999999</span> <span class="n">cache</span><span class="o">=</span><span class="mf">0.0</span><span class="n">MiB</span><span class="p">(</span><span class="mi">25</span><span class="n">tx</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">26</span> <span class="n">AddToWallet</span> <span class="mi">641</span><span class="n">c0f39d60eb92661b65b413db56122d32562576c7ad77a1a04745eab52ac78</span>  <span class="n">new</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">26</span> <span class="n">AddToWallet</span> <span class="mf">0e86</span><span class="n">a8f71b8a3b580935cb790c1fce039d9243b867f29564a76ee316f3c8f593</span>  <span class="n">update</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">22</span> <span class="n">socket</span> <span class="n">recv</span> <span class="n">error</span> <span class="n">Connection</span> <span class="n">reset</span> <span class="n">by</span> <span class="n">peer</span> <span class="p">(</span><span class="mi">104</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">40</span> <span class="n">connect</span><span class="p">()</span> <span class="n">to</span> <span class="mf">103.247</span><span class="o">.</span><span class="mf">155.206</span><span class="p">:</span><span class="mi">15556</span> <span class="n">failed</span> <span class="n">after</span> <span class="n">select</span><span class="p">():</span> <span class="n">Connection</span> <span class="n">refused</span> <span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="mi">2018</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">04</span> <span class="mi">04</span><span class="p">:</span><span class="mi">24</span><span class="p">:</span><span class="mi">04</span> <span class="n">socket</span> <span class="n">recv</span> <span class="n">error</span> <span class="n">Connection</span> <span class="n">reset</span> <span class="n">by</span> <span class="n">peer</span> <span class="p">(</span><span class="mi">104</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>Conclusion:<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>Based on the modifications above, coins spent by the modified wallet will be rejected by the network.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../release-notes-4.5.1.html" class="btn btn-neutral float-right" title="NavCoin v4.5.1 Release Notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../release-notes-4.5.0.html" class="btn btn-neutral float-left" title="NavCoin v4.5.0 Release Notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, NavCoin Core Dev Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

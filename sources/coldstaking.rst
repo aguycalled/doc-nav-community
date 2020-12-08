@@ -24,7 +24,7 @@ Sending coins to Cold Staking (v1)
 
 .. note::
 
-   Using Cold Staking v1, ``PK_Staking`` will hold both the staking and voting rights of the coins. If you are running a staking node as a SaaS (Staking as a Service), because you are a staking pool or exchange, and you won't participate in the DAO votings or allow your delegators to set up individual votes or allow your delegators to specify their own voting address, you need to set the ``excludevotes`` flag to ``1``, in order to exclude your blocks from the DAO quorum.
+   Using Cold Staking v1, ``PK_Staking`` will hold both the staking and voting rights of the coins. If you are running a staking node as a SaaS (Staking as a Service), because you are a staking pool or exchange, and you won't participate in the DAO votings or allow your delegators to set up individual votes or allow your delegators to specify their own voting address, you need to set the ``excludevote`` flag to ``1``, in order to exclude your blocks from the DAO quorum.
 
 To obtain a Cold Staking v1 address, you can use the following RPC command::
 

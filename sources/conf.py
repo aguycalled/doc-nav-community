@@ -27,7 +27,7 @@ author = u'NavCoin Core Dev Team'
 version = u''
 # The full version, including alpha/beta/rc tags
 release = u''
-
+html_baseurl = "http://docs.nav.community"
 
 # -- General configuration ---------------------------------------------------
 
@@ -41,6 +41,7 @@ release = u''
 extensions = [
     "sphinx_rtd_theme",
     'sphinx.ext.mathjax',
+    'sphinx.ext.githubpages',
     'recommonmark',
     'sphinx.ext.viewcode',
 ]

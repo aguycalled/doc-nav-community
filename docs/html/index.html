@@ -1,0 +1,495 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to NavCoin Core Documentation! &mdash; NavCoin Core Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to get NavCoin Core" href="get.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home" alt="Documentation Home"> NavCoin Core Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="get.html">How to get NavCoin Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use.html">How to use NavCoin Core</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpc.html">RPC methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network.html">Network parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base58check.html">Base58Check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="payloads.html">Address Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opcodes.html">Script Opcodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard_script.html">Standard Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard_script.html#dao-special-scripts">DAO Special Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special_tx.html">Special Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blsct.html">BLSCT Cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coldstaking.html">Cold Staking</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Release notes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.0.0.html">NavCoin v4.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.2.0.html">NavCoin v4.2.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.2.1.html">NavCoin v4.2.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.3.0.html">NavCoin v4.3.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.4.0.html">NavCoin v4.4.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.0.html">NavCoin v4.5.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.0-additional-testing-notes/modified-coldstaking-client-notes-4.5.0.html">Modified client testing for cold-staking v4.5.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.1.html">NavCoin v4.5.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.2.html">NavCoin v4.5.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.6.0.html">NavCoin v4.6.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.0.html">NavCoin v4.7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.1.html">NavCoin v4.7.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.2.html">NavCoin v4.7.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.3.html">NavCoin v4.7.3 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-5.0.0.html">NavCoin v5.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-5.0.1.html">NavCoin v5.0.1 Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">NavCoin Core Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Welcome to NavCoin Core Documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-navcoin-core-documentation">
+<h1>Welcome to NavCoin Core Documentation!<a class="headerlink" href="#welcome-to-navcoin-core-documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about-navcoin">
+<h2>About NavCoin<a class="headerlink" href="#about-navcoin" title="Permalink to this headline">¶</a></h2>
+<p>NavCoin is an open-sourced digital currency with privacy-enhanced features. Transactions that occur on the blockchain of NavCoin are made in a peer-to-peer fashion with no need for intermediaries. With NavCoin, one can choose to store and transact coins publicly (NAV) and privately (xNAV). If one chooses to transact privately, it will not be possible to link a transaction to its sender or receiver, or even view the amount that was sent. This has been made possible by NavCoin’s self-developed privacy protocol called Boneh-Lynn-Shacham Confidential Transactions (blsCT).</p>
+<p>NavCoin was invented in 2014 and had no pre-mine or ICO. With block times of 30 seconds, one can stake their coins to earn rewards through Proof of Stake Version 3 (PoSv3) for helping to secure the network. NavCoin’s current supply is 66,768,000 NAV with a block reward of 2.5 NAV, hence a decreasing inflation model. From the 2,5 NAV, 2 NAV are redirected to the staker who found the block, and 0,5 NAV are accumulated in a decentralized treasury used to fund community initiatives based on the outcome of DAO votings. NavCoin’s decentralized autonomous organization (DAO) enables the community to be self-funded its treasury, self-guided through consultations, and self-governed through consensus changes. Anyone who holds coins on the public side (NAV) can participate in the DAO by staking their coins. Each stake is the equivalent of one vote, and there is no minimum amount required to take part.</p>
+<p>NavCoin Core is forked from bitcoin core v13.0, and as such, it inherits its P2P protocol and most of the RPC commands. This documment will reflect the new methods and implementations.</p>
+<p>The official repository hosting the soruce code is located on <a class="reference external" href="http://github.com/navcoin/navcoin-core">GitHub</a>.</p>
+</div>
+<div class="section" id="latest-release">
+<h2>Latest Release<a class="headerlink" href="#latest-release" title="Permalink to this headline">¶</a></h2>
+<p>The current last version of NavCoin Core is 5.0.1.</p>
+</div>
+<div class="section" id="connect-with-the-community">
+<h2>Connect with the community<a class="headerlink" href="#connect-with-the-community" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The main website of <a class="reference external" href="https://www.navcoin.org">NavCoin</a> has a general overview of the project.</li>
+<li>The <a class="reference external" href="https://discord.gg/y4Vu9jw">Discord server</a> is where most of the discussion happens related to development.</li>
+<li><a class="reference external" href="https://www.reddit.com/r/NavCoin">Reddit</a>.</li>
+<li><a class="reference external" href="https://t.me/navcoin">Telegram</a>.</li>
+<li><a class="reference external" href="https://twitter.com/NavCoin">Twitter</a>.</li>
+<li>Many articles and updates are posted on <a class="reference external" href="http://medium.com/nav-coin">Medium</a>.</li>
+</ul>
+</div>
+<div class="section" id="other-resources">
+<h2>Other resources<a class="headerlink" href="#other-resources" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://navexplorer.com">NavExplorer</a>  is the independent block explorer maintained by the community.</li>
+<li><a class="reference external" href="https://chainz.cryptoid.info/nav/">Cryptoid</a> hosts a basic block explorer which does not cover all the functionality of NavCoin’s blockchain.</li>
+<li>You can find various statistics in <a class="reference external" href="https://index.nav.community/stats.html">index.nav.community/stats.html</a>.</li>
+<li>A <a class="reference external" href="http://static-rewards.nav.community/">staking rewards calculator</a>.</li>
+<li>Register an <a class="reference external" href="http://openalias.nav.community/">openalias address</a>.</li>
+</ul>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="get.html">How to get NavCoin Core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get.html#get-static-binaries">Get static binaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get.html#build-from-sources">Build from sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get.html#using-the-build-script">Using the build script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get.html#install-dependencies-and-building">Install dependencies and building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get.html#deterministic-build-using-gitian">Deterministic build using Gitian</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="use.html">How to use NavCoin Core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="use.html#the-binaries">The binaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="use.html#the-data-directory">The data directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="use.html#passing-launch-options-to-the-node">Passing launch options to the node</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpc.html">RPC methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network.html">Network parameters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="network.html#version-bytes">Version bytes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="base58check.html">Base58Check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="payloads.html">Address Payloads</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="payloads.html#public-key-legacy">Public Key Legacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payloads.html#private-key-legacy">Private Key Legacy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payloads.html#blsct-public-address">BLSCT Public Address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payloads.html#blsct-secret-view-key">BLSCT Secret View Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payloads.html#blsct-secret-spending-key">BLSCT Secret Spending Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payloads.html#cold-staking-v1">Cold Staking v1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payloads.html#cold-staking-v2">Cold Staking v2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payloads.html#script-address">Script Address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payloads.html#raw-script-address">Raw Script Address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payloads.html#extended-public-key">Extended Public Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payloads.html#extended-private-key">Extended Private Key</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#block-header">Block Header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#block">Block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#bulletproof-range-proof">Bulletproof Range Proof</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#transaction">Transaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#transaction-input">Transaction Input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#transaction-output">Transaction Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#scalar">Scalar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#g1element">G1Element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#outpoint">OutPoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#txwitness">TxWitness</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="opcodes.html">Script Opcodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard_script.html">Standard Scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="standard_script.html#pay-to-public-key-hash-p2pkh">Pay to Public Key Hash (P2PKH)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard_script.html#pay-to-cold-staking-p2cs">Pay To Cold Staking (P2CS)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard_script.html#pay-to-cold-staking-v2-p2cs2">Pay To Cold Staking v2 (P2CS2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard_script.html#accumulation-in-the-community-fund">Accumulation in the Community Fund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard_script.html#remeedable-without-conditions">Remeedable without conditions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="standard_script.html#dao-special-scripts">DAO Special Scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="standard_script.html#proposal-vote">Proposal Vote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard_script.html#payment-request-vote">Payment Request Vote</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard_script.html#consultation-support">Consultation Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard_script.html#consultation-vote">Consultation Vote</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="special_tx.html">Special Transactions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="special_tx.html#create-community-fund-proposal">Create Community Fund Proposal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="special_tx.html#create-community-fund-payment-request">Create Community Fund Payment Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="special_tx.html#create-dao-consultation">Create DAO Consultation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="special_tx.html#create-answer-for-a-dao-consultation">Create Answer for a DAO Consultation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="special_tx.html#create-a-dao-vote-for-cold-staking-v2">Create a DAO Vote for Cold Staking v2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="blsct.html">BLSCT Cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coldstaking.html">Cold Staking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="coldstaking.html#setting-up-a-staking-node">Setting up a staking node</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coldstaking.html#generating-the-spending-key">Generating the spending key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coldstaking.html#sending-coins-to-cold-staking-v1">Sending coins to Cold Staking (v1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coldstaking.html#sending-coins-to-cold-staking-v2">Sending coins to Cold Staking (v2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coldstaking.html#withdrawing-coins-from-cold-staking">Withdrawing coins from Cold Staking</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Release notes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.0.0.html">NavCoin v4.0.0 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.0.0.html#release-notes">RELEASE NOTES</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.2.0.html">NavCoin v4.2.0 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.2.0.html#introduces-two-new-soft-forks">Introduces two new Soft Forks:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.2.0.html#an-additional-network-devnet-is-added">An additional network “devnet” is added.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.2.0.html#core-wallet-gui-fixes">Core Wallet GUI Fixes:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.2.0.html#other-fixes-notes">Other Fixes/Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.2.1.html">NavCoin v4.2.1 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.2.1.html#hot-fix">Hot Fix:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.3.0.html">NavCoin v4.3.0 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.3.0.html#introduces-openalias">Introduces OpenAlias:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.3.0.html#wallet-support-for-bootstrapping">Wallet support for bootstrapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.3.0.html#new-gui-tx-status-for-orphans">New gui tx status for orphans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.3.0.html#remove-bignum-use">Remove BIGNUM use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.3.0.html#zeromq-windows-patch">ZeroMQ Windows Patch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.3.0.html#staking">Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.3.0.html#updates-secp256k1-lib">Updates secp256k1 Lib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.3.0.html#translations">Translations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.4.0.html">NavCoin v4.4.0 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.4.0.html#community-fund">Community Fund:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.4.0.html#community-fund-accumulation-spread">Community Fund Accumulation Spread</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.4.0.html#community-fund-contribution-increase">Community Fund Contribution Increase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.4.0.html#reject-specific-version-bits">Reject specific version bits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.4.0.html#community-fund-rpc-commands">Community fund RPC commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.0.html">NavCoin v4.5.0 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.0.html#cold-staking-protocol-upgrade">Cold Staking Protocol Upgrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.0.html#community-fund-voting-gui">Community Fund Voting GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.0.html#static-rewards-protocol-upgrade">Static Rewards Protocol Upgrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.0.html#dynamic-community-fund-quorum-protocol-upgrade">Dynamic Community Fund Quorum Protocol Upgrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.0.html#reject-specific-version-bits-by-default">Reject specific version bits by default</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.0.html#block-header-spam-protection">Block header spam protection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.0.html#community-fund-rpc-commands">Community Fund RPC commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.0-additional-testing-notes/modified-coldstaking-client-notes-4.5.0.html">Modified client testing for cold-staking v4.5.0</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.0-additional-testing-notes/modified-coldstaking-client-notes-4.5.0.html#modified-spending-wallet-to-stake-inputs">1. Modified spending wallet to stake inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.0-additional-testing-notes/modified-coldstaking-client-notes-4.5.0.html#modified-staking-wallet-to-send-staking-outputs-to-another-address">2. Modified staking wallet to send staking outputs to another address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.0-additional-testing-notes/modified-coldstaking-client-notes-4.5.0.html#modified-staking-wallet-to-spend-inputs">3. Modified staking wallet to spend inputs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.1.html">NavCoin v4.5.1 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.1.html#community-fund-hotfixes">Community Fund Hotfixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.1.html#static-rewards-hotfix">Static Rewards Hotfix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.1.html#other-modifications-in-the-navcoin-client-docs-and-codebase">Other modifications in the NavCoin client, docs and codebase</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.2.html">NavCoin v4.5.2 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.2.html#community-fund-duplicate-payment-hard-fork">Community Fund Duplicate Payment Hard Fork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.2.html#voting-cycle-counter-hotfix">Voting Cycle Counter Hotfix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.2.html#faster-blockchain-sync">Faster Blockchain Sync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.2.html#rpc-tests-newly-implemented-and-fixed">RPC Tests newly implemented and fixed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.5.2.html#other-updates-to-the-navcoin-client-docs-and-codebase">Other updates to the NavCoin client, docs and codebase</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.6.0.html">NavCoin v4.6.0 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.6.0.html#community-fund-ui">Community Fund UI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.6.0.html#accumulation-of-staking-rewards-in-different-address">Accumulation of staking rewards in different address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.6.0.html#mnemonic-seed-phrase-support">Mnemonic seed phrase support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.6.0.html#fix-wrong-balance-after-orphan-stakes">Fix wrong balance after orphan stakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.6.0.html#index-cold-staking-address-unspent-output-by-spending-address">Index cold staking address unspent output by spending address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.6.0.html#fix-for-payment-request-reorganizations">Fix for Payment Request reorganizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.6.0.html#other-updates-to-the-navcoin-client-docs-and-codebase">Other updates to the NavCoin client, docs and codebase</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.0.html">NavCoin v4.7.0 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.7.0.html#added-password-prompt-for-cfund-payment-proposal-dialogs">Added password prompt for CFund payment/proposal dialogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.7.0.html#use-of-the-coinsdb-for-the-community-fund">Use of the CoinsDB for the Community Fund</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.7.0.html#added-error-log-tab-in-debug-window">Added error log tab in debug window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.7.0.html#added-some-new-fiat-currencies-and-enabled-auto-price-update">Added some new FIAT currencies and enabled auto price update</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.7.0.html#added-new-progress-ui-for-sync">Added new progress ui for sync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.7.0.html#full-list-of-merged-pull-requests">Full List of merged pull requests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.1.html">NavCoin v4.7.1 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.7.1.html#fix-cfund-db-read-after-nullified-entry">Fix CFund DB read after nullified entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.7.1.html#merged-prs">Merged PRs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.2.html">NavCoin v4.7.2 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.7.2.html#fix-for-verify-chain">Fix for Verify Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.7.2.html#cfunddb-extra-log-and-ensure-read-before-modify">CFundDB extra log and ensure read before modify</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.7.2.html#restart-testnet">Restart testnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.7.2.html#full-list-of-merged-prs">Full list of Merged PRs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.3.html">NavCoin v4.7.3 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-4.7.3.html#anti-header-spam-v2">Anti Header Spam v2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-5.0.0.html">NavCoin v5.0.0 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-5.0.0.html#dao-extension">DAO Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-5.0.0.html#dandelion">Dandelion++</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-5.0.0.html#mnemonic-startup-gui">Mnemonic startup GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-5.0.0.html#add-tools-page-dialog-for-running-common-commands-for-wallet-repair-maintenance">Add tools page/dialog for running common commands for wallet repair/maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-5.0.0.html#update-libcurl-to-v7-68-0">Update libcurl to v7.68.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-5.0.0.html#rescan-when-importing-mnemonic">Rescan when importing mnemonic</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-5.0.1.html">NavCoin v5.0.1 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-5.0.1.html#fix-getaddressbalance-for-address-reuse">Fix getaddressbalance for address reuse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-5.0.1.html#updated-the-message-that-rpc-call-returns-after-encrypting-wallet">Updated the message that RPC call returns after encrypting wallet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-5.0.1.html#added-more-progress-indicators-during-wallet-start-up">Added more progress indicators during wallet start up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-5.0.1.html#added-a-password-step-to-setup-wizard">Added a password step to setup wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-5.0.1.html#fix-for-crash-when-voting-for-payment-request">Fix for crash when voting for payment request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-5.0.1.html#added-new-show-dump-mnemonic-ui-similar-to-the-dumpmnemonic-rpc-call">Added new show/dump mnemonic UI, similar to the dumpmnemonic RPC call</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-5.0.1.html#fixed-qa-rpc-tests-dao-consultation-consensus-py">Fixed qa/rpc-tests/dao-consultation-consensus.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-5.0.1.html#updated-the-encrypt-wallet-logic-to-not-replace-master-key">Updated the encrypt wallet logic to not replace master key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-5.0.1.html#fixed-some-functional-tests-that-were-checking-for-state-0-for-expired-proposals-or-prequests">Fixed some functional tests that were checking for state == 0 for expired proposals or prequests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/release-notes-5.0.1.html#updated-price-update-timer-to-respect-shutdown-request">Updated price update timer to respect shutdown request</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="get.html" class="btn btn-neutral float-right" title="How to get NavCoin Core" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, NavCoin Core Dev Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

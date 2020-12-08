@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NavCoin v4.3.0 Release Notes &mdash; NavCoin Core Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NavCoin v4.4.0 Release Notes" href="release-notes-4.4.0.html" />
+    <link rel="prev" title="NavCoin v4.2.1 Release Notes" href="release-notes-4.2.1.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> NavCoin Core Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../get.html">How to get NavCoin Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use.html">How to use NavCoin Core</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">RPC methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network.html">Network parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base58check.html">Base58Check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../payloads.html">Address Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../serialization.html">Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opcodes.html">Script Opcodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standard_script.html">Standard Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standard_script.html#dao-special-scripts">DAO Special Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_tx.html">Special Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blsct.html">BLSCT Cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coldstaking.html">Cold Staking</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Release notes:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.0.0.html">NavCoin v4.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.2.0.html">NavCoin v4.2.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.2.1.html">NavCoin v4.2.1 Release Notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NavCoin v4.3.0 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduces-openalias">Introduces OpenAlias:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#openalias-registration">OpenAlias registration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#wallet-support-for-bootstrapping">Wallet support for bootstrapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#new-gui-tx-status-for-orphans">New gui tx status for orphans</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remove-bignum-use">Remove BIGNUM use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zeromq-windows-patch">ZeroMQ Windows Patch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#staking">Staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#updates-secp256k1-lib">Updates secp256k1 Lib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#translations">Translations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#other-modifications-in-the-navcoin-client">Other modifications in the NavCoin client:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.4.0.html">NavCoin v4.4.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.0.html">NavCoin v4.5.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.0-additional-testing-notes/modified-coldstaking-client-notes-4.5.0.html">Modified client testing for cold-staking v4.5.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.1.html">NavCoin v4.5.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.2.html">NavCoin v4.5.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.6.0.html">NavCoin v4.6.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.0.html">NavCoin v4.7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.1.html">NavCoin v4.7.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.2.html">NavCoin v4.7.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.3.html">NavCoin v4.7.3 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-5.0.0.html">NavCoin v5.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-5.0.1.html">NavCoin v5.0.1 Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NavCoin Core Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>NavCoin v4.3.0 Release Notes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/release-notes/release-notes-4.3.0.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="navcoin-v4-3-0-release-notes">
+<h1>NavCoin v4.3.0 Release Notes<a class="headerlink" href="#navcoin-v4-3-0-release-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduces-openalias">
+<h2>Introduces OpenAlias:<a class="headerlink" href="#introduces-openalias" title="Permalink to this headline">¶</a></h2>
+<p>This PR https://github.com/navcoin/navcoin-core/pull/213 completes the implementation of the OpenAlias protocol into the NavCoin Core client.</p>
+<p>OpenAlias is an standard created by the Monero Core project used in the Monero wallet and some other clients like Bitcoin Electrum which allows the wallet to translate email addresses into cryptocurrency addresses using custom TXT entries in the DNS records of a domain.</p>
+<p>More details about the specification can be found at www.openalias.org</p>
+<p>Part of the code is based in the original Monero implementation. The main differences are:</p>
+<ul class="simple">
+<li>Prefix of the TXT entry is required to be set to oa1:nav</li>
+<li>The only parsed parameter is recipient_address</li>
+<li>NavCoin enforces by default the use of DNSSEC</li>
+</ul>
+<div class="section" id="openalias-registration">
+<h3>OpenAlias registration<a class="headerlink" href="#openalias-registration" title="Permalink to this headline">¶</a></h3>
+<p>You can now register a OpenAlias address at http://openalias.nav.community/</p>
+</div>
+</div>
+<div class="section" id="wallet-support-for-bootstrapping">
+<h2>Wallet support for bootstrapping<a class="headerlink" href="#wallet-support-for-bootstrapping" title="Permalink to this headline">¶</a></h2>
+<p>A new argument (-bootstrap) is can be passed on initialisation to specify an URL from where a copy of the blockchain in TAR format will be downloaded and extracted in the data folder.</p>
+<p>Also adds a GUI submenu entry under FILE which lets you bootstrap using the GUI.</p>
+</div>
+<div class="section" id="new-gui-tx-status-for-orphans">
+<h2>New gui tx status for orphans<a class="headerlink" href="#new-gui-tx-status-for-orphans" title="Permalink to this headline">¶</a></h2>
+<p>In version 4.2.0 the wallet started hiding orphan stakes in the transactions list. This has caused some confusion with users as OS notifications were still showing while the stakes did not appear.</p>
+<p>We now clasify orphan transactions with a new “Orphan” status and show them in the transactions list.</p>
+</div>
+<div class="section" id="remove-bignum-use">
+<h2>Remove BIGNUM use<a class="headerlink" href="#remove-bignum-use" title="Permalink to this headline">¶</a></h2>
+<p>This PR https://github.com/navcoin/navcoin-core/pull/214 completely removes the use of the OpenSSL’s class BIGNUM, substituting the uses of CBigNum with the class uint256 with extended arithmetic capabilities (arith_uint256). OpenSSL deprecated some BIGNUM functions in version 1.1, making the wallet unable to compile in systems which use the newer version. This patch fixes this issue.</p>
+</div>
+<div class="section" id="zeromq-windows-patch">
+<h2>ZeroMQ Windows Patch<a class="headerlink" href="#zeromq-windows-patch" title="Permalink to this headline">¶</a></h2>
+<p>Applies https://github.com/bitcoin/bitcoin/pull/8238/files to fix ZeroMQ compatibility with Windows systems.</p>
+</div>
+<div class="section" id="staking">
+<h2>Staking<a class="headerlink" href="#staking" title="Permalink to this headline">¶</a></h2>
+<p>Staking can now be toggled “on-the-fly” without restarting the client through the GUI or using the <code class="docutils literal notranslate"><span class="pre">staking</span></code> RPC command.</p>
+</div>
+<div class="section" id="updates-secp256k1-lib">
+<h2>Updates secp256k1 Lib<a class="headerlink" href="#updates-secp256k1-lib" title="Permalink to this headline">¶</a></h2>
+<p>The secp256k1 lib from bitcoin 16.2 release was included into the codebase. While there are a number of improvements, the update was mainly needed due to the better build options for developers and allows newer OS’s to build. This reduces the friction in getting setup and working with NavCoin</p>
+</div>
+<div class="section" id="translations">
+<h2>Translations<a class="headerlink" href="#translations" title="Permalink to this headline">¶</a></h2>
+<p>The Wallet GUI is now fully translated to Spanish and Italian.</p>
+<div class="section" id="other-modifications-in-the-navcoin-client">
+<h3>Other modifications in the NavCoin client:<a class="headerlink" href="#other-modifications-in-the-navcoin-client" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>New RPC command <code class="docutils literal notranslate"><span class="pre">resolveopenalias</span></code> resolves an OpenAlias address to a NavCoin address</li>
+<li>Added support for sending to OpenAlias addresses in the GUI, when parsing URIs and the RPC commands validateaddress and sendtoaddress</li>
+<li>New argument <code class="docutils literal notranslate"><span class="pre">-requirednssec</span></code> to set whether DNSSEC validation is required to resolve openalias addresses (true by default)</li>
+<li>New argument <code class="docutils literal notranslate"><span class="pre">-mininputvalue</span></code> to set the minimum value for an output to be considered as a possible coinstake input
+-New argument <code class="docutils literal notranslate"><span class="pre">-banversion</span></code> to ban nodes depending on their broadcasted version</li>
+<li>Added support to ban nodes with determined wallet versions using the config parameter <code class="docutils literal notranslate"><span class="pre">banversion</span></code></li>
+<li>Blocks created with the rpc command <code class="docutils literal notranslate"><span class="pre">generate</span></code> now include a correct timestamp for the coinbase transaction</li>
+<li>Using the regtest will create a new genesis block on runtime</li>
+<li>A new testnet has been initiated</li>
+<li>The development-focused networks regtest and devnet won’t require peers for blocks generation</li>
+<li>Update copyright notice</li>
+<li>Updates automake to enable dev compilation on New OS’s like Ubuntu 18.04</li>
+<li>Updates Payment request UI to handle new OpenSSL Lib</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="release-notes-4.4.0.html" class="btn btn-neutral float-right" title="NavCoin v4.4.0 Release Notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="release-notes-4.2.1.html" class="btn btn-neutral float-left" title="NavCoin v4.2.1 Release Notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, NavCoin Core Dev Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

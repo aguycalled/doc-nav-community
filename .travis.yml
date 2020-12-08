@@ -1,0 +1,22 @@
+language: python
+python:
+- '3.7'
+- '3.8'
+- 3.8-dev
+- nightly
+install:
+- pip install -r dev-requirements.txt
+script:
+- make -C . clean html
+- mv docs/html/* docs/
+- touch docs/.nojekyll
+after_success:
+- coverage run --source=httpsuite -m pytest tests/
+- coveralls
+deploy:
+  - provider: pages:git
+    verbose: true
+    token: $GITHUB_TOKEN
+    edge: true
+    local_dir: ./docs/
+    keep_history: true

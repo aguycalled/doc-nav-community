@@ -86,7 +86,7 @@ The extracted commitment's secret key ``gamma'`` will sign the message ``BLSCTBA
 
    BPSI = BasicSchemeSign(gamma', "BLSCTBALANCE")
 
-The wallet will store the aggregation of all of the transaction's ``BSI``s and ``BSO``s in its BLS transaction signature field as ``BS``. The transaction's BLS balance signature will result from aggregating all the ``BPSI``s and ``BPSO``s signatures as ``BPS``.
+The wallet will store the aggregation of all of the transaction's ``BSI`` s and ``BSO`` s in its BLS transaction signature field as ``BS``. The transaction's BLS balance signature will result from aggregating all the ``BPSI`` s and ``BPSO`` s signatures as ``BPS``.
 
 Every transaction must include an output with a transparent amount whose script is the provably unspendable ``OP_RETURN`` representing the sender's fee. Transactions are not allowed to combine public and private inputs. 
 

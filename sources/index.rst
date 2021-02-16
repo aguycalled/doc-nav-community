@@ -85,3 +85,4 @@ Other resources
    release-notes/release-notes-4.7.3.md
    release-notes/release-notes-5.0.0.md
    release-notes/release-notes-5.0.1.md
+   release-notes/release-notes-6.0.md

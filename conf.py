@@ -43,7 +43,13 @@ extensions = [
     'sphinx.ext.mathjax',
     'recommonmark',
     'sphinx.ext.viewcode',
+    'sphinxcontrib.googleanalytics'
 ]
+
+googleanalytics_id = 'G-HTZYT24VL4'
+
+
+googleanalytics_enabled = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

@@ -36,3 +36,20 @@ Raw Script Address        60                                                    
 Extended Public Key       0x0488B21E                                                                  0x0488B21E
 Extended Private Key      0x0x88ADE4                                                                  0x0x88ADE4
 ========================= =========================================================================== ===========================================================================
+
+.. _network-addresses:
+
+Address Formats for Mainnet
+---------------------------
+
+Exchanges and wallets are required to allow withdrawals to the following type of addresses:
+
+========================= ============= ========== ===========================================================================================================================================
+Address type              Starts with   Length     Example                                                       
+========================= ============= ========== ===========================================================================================================================================
+Public Key Legacy         N             34         NiMNbr141gHve9ER2i64S9nbR1USBbALji                                                             
+BLSCT Public Address      xN            139        xNU4LXCWHvYXYGG2i8X4QhFRH4FoCRd4q5bJUQLF4crnnnuCDPPXMK5gD78wU7cJ9VQMawMNSbtpwgQUnXmZTkJK9fUfJnSUFYxDaQcdSA5MaN8ghPrNxGnMNsuz7ywwaxVboWXRo95                                                             
+Cold Staking v1           X             61         Xfm2AbCgLBjk792bTXwzFRvWDazszidsfy4xg2HMPnEjZYN87mGBREXwLNWee
+Cold Staking v1           Y             61         YR6W9iTiwFrRXkySu5jGyP8rjqfbNXj7AZ9ugPHhiNnPMSKdxHzbSmFnBGA8D                                                  
+Cold Staking v2           4             89         4DtQXPrQz3nXV1iGQgrdnFv5AT1ouDzbfmd6yBVrVhAtPL6jE3ofebTygGbJbSGmTUd9wBH3WDoyAJkS9vQ2KtKCd                                                                          
+========================= ============= ========== ===========================================================================================================================================

@@ -35,9 +35,13 @@ The installation of the electrum server can be disable indicating the parameter 
 Install dependencies and building
 ---------------------------------
 
+.. note::
+
+   Some of the dependencies require CMake 3.14 or higher. Ubuntu 18.04 ships an older version of CMake, hence requiring to manually upgrade to a newer version. This can be done using the `Kitware APT Repository <https://apt.kitware.com>`_.
+
 Alternatively, one can reproduce the build itself. From a fresh Linux system, one would install the dependencies and build as follows::
 
-   sudo apt -y install build-essential certbot libtool autotools-dev automake pkg-config git cmake libattr1-dev python3-dev
+   sudo apt -y install build-essential libtool autotools-dev automake pkg-config git cmake libattr1-dev python3-dev
    git clone https://github.com/navcoin/navcoin-core.git
    cd navcoin-core
    git checkout master

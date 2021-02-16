@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NavCoin v5.0.1 Release Notes &mdash; NavCoin Core Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NavCoin v6.0 Release Notes" href="release-notes-6.0.html" />
+    <link rel="prev" title="NavCoin v5.0.0 Release Notes" href="release-notes-5.0.0.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> NavCoin Core Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../get.html">How to get NavCoin Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use.html">How to use NavCoin Core</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">RPC methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network.html">Network parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base58check.html">Base58Check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../payloads.html">Address Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../serialization.html">Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opcodes.html">Script Opcodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standard_script.html">Standard Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standard_script.html#dao-special-scripts">DAO Special Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_tx.html">Special Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blsct.html">BLSCT Cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coldstaking.html">Cold Staking</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Release notes:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.0.0.html">NavCoin v4.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.2.0.html">NavCoin v4.2.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.2.1.html">NavCoin v4.2.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.3.0.html">NavCoin v4.3.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.4.0.html">NavCoin v4.4.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.0.html">NavCoin v4.5.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.0-additional-testing-notes/modified-coldstaking-client-notes-4.5.0.html">Modified client testing for cold-staking v4.5.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.1.html">NavCoin v4.5.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.2.html">NavCoin v4.5.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.6.0.html">NavCoin v4.6.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.0.html">NavCoin v4.7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.1.html">NavCoin v4.7.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.2.html">NavCoin v4.7.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.3.html">NavCoin v4.7.3 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-5.0.0.html">NavCoin v5.0.0 Release Notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NavCoin v5.0.1 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fix-getaddressbalance-for-address-reuse">Fix getaddressbalance for address reuse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#updated-the-message-that-rpc-call-returns-after-encrypting-wallet">Updated the message that RPC call returns after encrypting wallet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#added-more-progress-indicators-during-wallet-start-up">Added more progress indicators during wallet start up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#added-a-password-step-to-setup-wizard">Added a password step to setup wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fix-for-crash-when-voting-for-payment-request">Fix for crash when voting for payment request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#added-new-show-dump-mnemonic-ui-similar-to-the-dumpmnemonic-rpc-call">Added new show/dump mnemonic UI, similar to the dumpmnemonic RPC call</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fixed-qa-rpc-tests-dao-consultation-consensus-py">Fixed qa/rpc-tests/dao-consultation-consensus.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#updated-the-encrypt-wallet-logic-to-not-replace-master-key">Updated the encrypt wallet logic to not replace master key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fixed-some-functional-tests-that-were-checking-for-state-0-for-expired-proposals-or-prequests">Fixed some functional tests that were checking for state == 0 for expired proposals or prequests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#updated-price-update-timer-to-respect-shutdown-request">Updated price update timer to respect shutdown request</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-6.0.html">NavCoin v6.0 Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NavCoin Core Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>NavCoin v5.0.1 Release Notes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/release-notes/release-notes-5.0.1.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="navcoin-v5-0-1-release-notes">
+<h1>NavCoin v5.0.1 Release Notes<a class="headerlink" href="#navcoin-v5-0-1-release-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fix-getaddressbalance-for-address-reuse">
+<h2>Fix getaddressbalance for address reuse<a class="headerlink" href="#fix-getaddressbalance-for-address-reuse" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/691">Pull Request 691</a>&gt;</p>
+</div>
+<div class="section" id="updated-the-message-that-rpc-call-returns-after-encrypting-wallet">
+<h2>Updated the message that RPC call returns after encrypting wallet<a class="headerlink" href="#updated-the-message-that-rpc-call-returns-after-encrypting-wallet" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/708">Pull Request 708</a>&gt;</p>
+</div>
+<div class="section" id="added-more-progress-indicators-during-wallet-start-up">
+<h2>Added more progress indicators during wallet start up<a class="headerlink" href="#added-more-progress-indicators-during-wallet-start-up" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/702">Pull Request 702</a>&gt;</p>
+</div>
+<div class="section" id="added-a-password-step-to-setup-wizard">
+<h2>Added a password step to setup wizard<a class="headerlink" href="#added-a-password-step-to-setup-wizard" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/700">Pull Request 700</a>&gt;</p>
+</div>
+<div class="section" id="fix-for-crash-when-voting-for-payment-request">
+<h2>Fix for crash when voting for payment request<a class="headerlink" href="#fix-for-crash-when-voting-for-payment-request" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/706">Pull Request 706</a>&gt;</p>
+</div>
+<div class="section" id="added-new-show-dump-mnemonic-ui-similar-to-the-dumpmnemonic-rpc-call">
+<h2>Added new show/dump mnemonic UI, similar to the dumpmnemonic RPC call<a class="headerlink" href="#added-new-show-dump-mnemonic-ui-similar-to-the-dumpmnemonic-rpc-call" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/692">Pull Request 692</a>&gt;</p>
+</div>
+<div class="section" id="fixed-qa-rpc-tests-dao-consultation-consensus-py">
+<h2>Fixed qa/rpc-tests/dao-consultation-consensus.py<a class="headerlink" href="#fixed-qa-rpc-tests-dao-consultation-consensus-py" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/703">Pull Request 703</a>&gt;</p>
+</div>
+<div class="section" id="updated-the-encrypt-wallet-logic-to-not-replace-master-key">
+<h2>Updated the encrypt wallet logic to not replace master key<a class="headerlink" href="#updated-the-encrypt-wallet-logic-to-not-replace-master-key" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/697">Pull Request 697</a>&gt;</p>
+</div>
+<div class="section" id="fixed-some-functional-tests-that-were-checking-for-state-0-for-expired-proposals-or-prequests">
+<h2>Fixed some functional tests that were checking for state == 0 for expired proposals or prequests<a class="headerlink" href="#fixed-some-functional-tests-that-were-checking-for-state-0-for-expired-proposals-or-prequests" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/698">Pull Request 698</a>&gt;</p>
+</div>
+<div class="section" id="updated-price-update-timer-to-respect-shutdown-request">
+<h2>Updated price update timer to respect shutdown request<a class="headerlink" href="#updated-price-update-timer-to-respect-shutdown-request" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/696">Pull Request 696</a>&gt;</p>
+<p>For additional information about new features, check <a class="reference external" href="https://navcoin.org/en/notices/">https://navcoin.org/en/notices/</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="release-notes-6.0.html" class="btn btn-neutral float-right" title="NavCoin v6.0 Release Notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="release-notes-5.0.0.html" class="btn btn-neutral float-left" title="NavCoin v5.0.0 Release Notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, NavCoin Core Dev Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

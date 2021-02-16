@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NavCoin v6.0 Release Notes &mdash; NavCoin Core Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="NavCoin v5.0.1 Release Notes" href="release-notes-5.0.1.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> NavCoin Core Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../get.html">How to get NavCoin Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use.html">How to use NavCoin Core</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">RPC methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network.html">Network parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base58check.html">Base58Check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../payloads.html">Address Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../serialization.html">Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opcodes.html">Script Opcodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standard_script.html">Standard Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standard_script.html#dao-special-scripts">DAO Special Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_tx.html">Special Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blsct.html">BLSCT Cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coldstaking.html">Cold Staking</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Release notes:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.0.0.html">NavCoin v4.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.2.0.html">NavCoin v4.2.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.2.1.html">NavCoin v4.2.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.3.0.html">NavCoin v4.3.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.4.0.html">NavCoin v4.4.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.0.html">NavCoin v4.5.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.0-additional-testing-notes/modified-coldstaking-client-notes-4.5.0.html">Modified client testing for cold-staking v4.5.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.1.html">NavCoin v4.5.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.2.html">NavCoin v4.5.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.6.0.html">NavCoin v4.6.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.0.html">NavCoin v4.7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.1.html">NavCoin v4.7.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.2.html">NavCoin v4.7.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.3.html">NavCoin v4.7.3 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-5.0.0.html">NavCoin v5.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-5.0.1.html">NavCoin v5.0.1 Release Notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NavCoin v6.0 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#blsct-bonehlynnshacham-confidential-transactions">blsCT: Boneh–Lynn–Shacham Confidential Transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dao-exclude-inactive-stakers-from-votings">[DAO] Exclude inactive stakers from votings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-support-for-wallet-database-encryption">Add support for wallet database encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-fixed-qa-rpc-tests-cfunddb-statehash-py">[TEST] Fixed qa/rpc-tests/cfunddb-statehash.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rpc-getaddressbalance-returns-staked-value">[RPC] getaddressbalance returns staked value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rpc-address-history-index">[RPC] Address history index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dao-gui-updated-links-to-navexplorer-dao-pages">[DAO][GUI] Updated links to navexplorer dao pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gui-disabled-dao-notification-if-not-staking">[GUI] Disabled DAO notification if not staking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rpc-correctly-label-isstakable-in-the-validateaddress-help-response">[RPC] Correctly label isstakable in the validateaddress help response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gui-add-voting-address-to-the-cold-staking-wizard">[GUI] Add voting address to the cold staking wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wallet-fix-wallet-issue-729">[WALLET] Fix -wallet issue #729</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#index-index-cold-staking-utxos-by-spending-address">[INDEX] Index cold staking UTXOs by spending address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rpc-getaddresshistory-counts-balance-for-whole-history-even-when-range">[RPC] getaddresshistory counts balance for whole history even when range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gui-update-getaddresstoreceive-cpp">[GUI] Update getaddresstoreceive.cpp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clean-remove-declaration-of-undefined-function">[CLEAN] Remove declaration of undefined function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rpc-fix-for-getaddresshistory-balance-of-multiple-addresses">[RPC] Fix for getaddresshistory balance of multiple addresses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#update-httpserver-cpp-header">Update httpserver.cpp header</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#add-0x2830-address-to-team-list-addresses">Add 0x2830 address to team list addresses</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NavCoin Core Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>NavCoin v6.0 Release Notes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/release-notes/release-notes-6.0.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="navcoin-v6-0-release-notes">
+<h1>NavCoin v6.0 Release Notes<a class="headerlink" href="#navcoin-v6-0-release-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="blsct-bonehlynnshacham-confidential-transactions">
+<h2>blsCT: Boneh–Lynn–Shacham Confidential Transactions<a class="headerlink" href="#blsct-bonehlynnshacham-confidential-transactions" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/743">Pull Request 743</a>&gt;</p>
+<p>This PR proposes a consensus change signaled by version bit 10 to signal the activation of the blsCT protocol in the mainnet starting on January 15, 2021.</p>
+<p>Read more details about blsCT in <a class="reference external" href="https://doc.nav.community/blsct.html">doc.nav.community</a></p>
+</div>
+<div class="section" id="dao-exclude-inactive-stakers-from-votings">
+<h2>[DAO] Exclude inactive stakers from votings<a class="headerlink" href="#dao-exclude-inactive-stakers-from-votings" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/745">Pull Request 745</a>&gt;</p>
+<p>This PR proposes a consensus change signaled by version bit 12 starting on January 15, 2021 to allow excluding stakers from the DAO votings.</p>
+<p>Nodes (like users who do not want to participate in the votings or exchanges which activate staking) will be able to exclude their staked blocks from the quorum by indicating the option -excludevote=1, preventing a scenario where a big enough am$</p>
+<p>Additionally, a node will label automatically their blocks to be excluded even if -excludevote=1 is no specified, whenever the staker hasn’t been active voting in any of the last 10 voting cycles which had an active vote. This is reverted whenev$</p>
+<p>Blocks are labeled to be excluded by activating the right-most bit of their nOnce parameter.</p>
+</div>
+<div class="section" id="add-support-for-wallet-database-encryption">
+<h2>Add support for wallet database encryption<a class="headerlink" href="#add-support-for-wallet-database-encryption" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/717">Pull Request 717</a>&gt;</p>
+<p>This PR introduces wallet transaction data encryption and updates LevelDB to the version 5.8. Wallets created or upgraded with NavCoin Core 6.0 are not compatible with previous versions of NavCoin Core.</p>
+</div>
+<div class="section" id="test-fixed-qa-rpc-tests-cfunddb-statehash-py">
+<h2>[TEST] Fixed qa/rpc-tests/cfunddb-statehash.py<a class="headerlink" href="#test-fixed-qa-rpc-tests-cfunddb-statehash-py" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/715">Pull Request 715</a>&gt;</p>
+</div>
+<div class="section" id="rpc-getaddressbalance-returns-staked-value">
+<h2>[RPC] getaddressbalance returns staked value<a class="headerlink" href="#rpc-getaddressbalance-returns-staked-value" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/723">Pull Request 723</a>&gt;</p>
+</div>
+<div class="section" id="rpc-address-history-index">
+<h2>[RPC] Address history index<a class="headerlink" href="#rpc-address-history-index" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/724">Pull Request 724</a>&gt;</p>
+</div>
+<div class="section" id="dao-gui-updated-links-to-navexplorer-dao-pages">
+<h2>[DAO][GUI] Updated links to navexplorer dao pages<a class="headerlink" href="#dao-gui-updated-links-to-navexplorer-dao-pages" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/725">Pull Request 725</a>&gt;</p>
+</div>
+<div class="section" id="gui-disabled-dao-notification-if-not-staking">
+<h2>[GUI] Disabled DAO notification if not staking<a class="headerlink" href="#gui-disabled-dao-notification-if-not-staking" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/726">Pull Request 726</a>&gt;</p>
+</div>
+<div class="section" id="rpc-correctly-label-isstakable-in-the-validateaddress-help-response">
+<h2>[RPC] Correctly label isstakable in the validateaddress help response<a class="headerlink" href="#rpc-correctly-label-isstakable-in-the-validateaddress-help-response" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/727">Pull Request 727</a>&gt;</p>
+</div>
+<div class="section" id="gui-add-voting-address-to-the-cold-staking-wizard">
+<h2>[GUI] Add voting address to the cold staking wizard<a class="headerlink" href="#gui-add-voting-address-to-the-cold-staking-wizard" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/728">Pull Request 728</a>&gt;</p>
+</div>
+<div class="section" id="wallet-fix-wallet-issue-729">
+<h2>[WALLET] Fix -wallet issue #729<a class="headerlink" href="#wallet-fix-wallet-issue-729" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/730">Pull Request 730</a>&gt;</p>
+</div>
+<div class="section" id="index-index-cold-staking-utxos-by-spending-address">
+<h2>[INDEX] Index cold staking UTXOs by spending address<a class="headerlink" href="#index-index-cold-staking-utxos-by-spending-address" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/731">Pull Request 731</a>&gt;</p>
+</div>
+<div class="section" id="rpc-getaddresshistory-counts-balance-for-whole-history-even-when-range">
+<h2>[RPC] getaddresshistory counts balance for whole history even when range<a class="headerlink" href="#rpc-getaddresshistory-counts-balance-for-whole-history-even-when-range" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/732">Pull Request 732</a>&gt;</p>
+</div>
+<div class="section" id="gui-update-getaddresstoreceive-cpp">
+<h2>[GUI] Update getaddresstoreceive.cpp<a class="headerlink" href="#gui-update-getaddresstoreceive-cpp" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/733">Pull Request 733</a>&gt;</p>
+</div>
+<div class="section" id="clean-remove-declaration-of-undefined-function">
+<h2>[CLEAN] Remove declaration of undefined function<a class="headerlink" href="#clean-remove-declaration-of-undefined-function" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/734">Pull Request 734</a>&gt;</p>
+</div>
+<div class="section" id="rpc-fix-for-getaddresshistory-balance-of-multiple-addresses">
+<h2>[RPC] Fix for getaddresshistory balance of multiple addresses<a class="headerlink" href="#rpc-fix-for-getaddresshistory-balance-of-multiple-addresses" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/735">Pull Request 735</a>&gt;</p>
+</div>
+<div class="section" id="update-httpserver-cpp-header">
+<h2>Update httpserver.cpp header<a class="headerlink" href="#update-httpserver-cpp-header" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/740">Pull Request 740</a>&gt;</p>
+</div>
+<div class="section" id="add-0x2830-address-to-team-list-addresses">
+<h2>Add 0x2830 address to team list addresses<a class="headerlink" href="#add-0x2830-address-to-team-list-addresses" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/744">Pull Request 744</a>&gt;</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="release-notes-5.0.1.html" class="btn btn-neutral float-left" title="NavCoin v5.0.1 Release Notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, NavCoin Core Dev Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

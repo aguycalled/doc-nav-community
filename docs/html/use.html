@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to use NavCoin Core &mdash; NavCoin Core Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Options" href="options.html" />
+    <link rel="prev" title="How to get NavCoin Core" href="get.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> NavCoin Core Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="get.html">How to get NavCoin Core</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to use NavCoin Core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-binaries">The binaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-data-directory">The data directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#passing-launch-options-to-the-node">Passing launch options to the node</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpc.html">RPC methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network.html">Network parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base58check.html">Base58Check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="payloads.html">Address Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opcodes.html">Script Opcodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard_script.html">Standard Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard_script.html#dao-special-scripts">DAO Special Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special_tx.html">Special Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blsct.html">BLSCT Cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coldstaking.html">Cold Staking</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Release notes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.0.0.html">NavCoin v4.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.2.0.html">NavCoin v4.2.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.2.1.html">NavCoin v4.2.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.3.0.html">NavCoin v4.3.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.4.0.html">NavCoin v4.4.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.0.html">NavCoin v4.5.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.0-additional-testing-notes/modified-coldstaking-client-notes-4.5.0.html">Modified client testing for cold-staking v4.5.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.1.html">NavCoin v4.5.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.2.html">NavCoin v4.5.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.6.0.html">NavCoin v4.6.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.0.html">NavCoin v4.7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.1.html">NavCoin v4.7.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.2.html">NavCoin v4.7.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.3.html">NavCoin v4.7.3 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-5.0.0.html">NavCoin v5.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-5.0.1.html">NavCoin v5.0.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-6.0.html">NavCoin v6.0 Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NavCoin Core Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>How to use NavCoin Core</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/use.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-use-navcoin-core">
+<h1>How to use NavCoin Core<a class="headerlink" href="#how-to-use-navcoin-core" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-binaries">
+<h2>The binaries<a class="headerlink" href="#the-binaries" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">navcoind</span></code>: A headless version of the node</li>
+<li><code class="docutils literal notranslate"><span class="pre">navcoin-qt</span></code>: The graphical version of the node</li>
+<li><code class="docutils literal notranslate"><span class="pre">navcoin-cli</span></code>: A RPC client to interact with the node</li>
+</ul>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">navcoin-qt</span></code> does not launch a RPC server by default. Interactions with the RPC server are possible using the <code class="docutils literal notranslate"><span class="pre">Debug</span> <span class="pre">console</span></code> which you can find in the menu <code class="docutils literal notranslate"><span class="pre">Help</span> <span class="pre">-&gt;</span> <span class="pre">Debug</span> <span class="pre">window</span></code>.</p>
+</div>
+<div class="section" id="the-data-directory">
+<h2>The data directory<a class="headerlink" href="#the-data-directory" title="Permalink to this headline">¶</a></h2>
+<p>Depending on your operating system, the data directory is located in:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Windows: <code class="docutils literal notranslate"><span class="pre">C:\Users\YourUserName\Appdata\Roaming\Navcoin4</span></code></li>
+<li>Mac: <code class="docutils literal notranslate"><span class="pre">~/Library/Application</span> <span class="pre">Support/navcoin4/</span></code></li>
+<li>Linux: <code class="docutils literal notranslate"><span class="pre">~/.navcoin4/</span></code></li>
+</ul>
+</div></blockquote>
+<p>The structure of the data directory is separated in various folder and files:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">blocks</span></code>: In this folder the raw blocks of the chain are stored.</li>
+<li><code class="docutils literal notranslate"><span class="pre">chainstate</span></code>: The state view of the chain is stored here in a LevelDB database. This includes the UTXO set and diverse data related to the DAO.</li>
+<li><code class="docutils literal notranslate"><span class="pre">wallet.dat</span></code>: The default name of the wallet database, using Berkeley DB 5.8.</li>
+<li><code class="docutils literal notranslate"><span class="pre">navcoin.conf</span></code>: The configuration file. This file does not exist by default.</li>
+<li><code class="docutils literal notranslate"><span class="pre">debug.log</span></code>: The debug log file.</li>
+<li><code class="docutils literal notranslate"><span class="pre">error.log</span></code>: A filtered version of <code class="docutils literal notranslate"><span class="pre">debug.log</span></code> including only the errors.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="passing-launch-options-to-the-node">
+<span id="passing-options"></span><h2>Passing launch options to the node<a class="headerlink" href="#passing-launch-options-to-the-node" title="Permalink to this headline">¶</a></h2>
+<p>Different <a class="reference internal" href="options.html#options"><span class="std std-ref">Options</span></a> can be passed to the node on launch. There are two ways of doing this.</p>
+<ul>
+<li><p class="first">By including them in the <code class="docutils literal notranslate"><span class="pre">navcoin.conf</span></code> file as pairs of keys and values:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">option1</span><span class="o">=</span><span class="n">value1</span>
+<span class="n">option2</span><span class="o">=</span><span class="n">value2</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">By passwing them as arguments to the binaries:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">navcoind</span> <span class="o">-</span><span class="n">option1</span><span class="o">=</span><span class="n">value1</span> <span class="o">-</span><span class="n">option2</span><span class="o">=</span><span class="n">value2</span>
+<span class="o">./</span><span class="n">navcoin</span><span class="o">-</span><span class="n">qt</span> <span class="o">-</span><span class="n">option1</span><span class="o">=</span><span class="n">value1</span> <span class="o">-</span><span class="n">option2</span><span class="o">=</span><span class="n">value2</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="options.html" class="btn btn-neutral float-right" title="Options" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="get.html" class="btn btn-neutral float-left" title="How to get NavCoin Core" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, NavCoin Core Dev Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

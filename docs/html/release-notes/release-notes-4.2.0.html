@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NavCoin v4.2.0 Release Notes &mdash; NavCoin Core Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NavCoin v4.2.1 Release Notes" href="release-notes-4.2.1.html" />
+    <link rel="prev" title="NavCoin v4.0.0 Release Notes" href="release-notes-4.0.0.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> NavCoin Core Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../get.html">How to get NavCoin Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use.html">How to use NavCoin Core</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">RPC methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network.html">Network parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base58check.html">Base58Check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../payloads.html">Address Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../serialization.html">Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opcodes.html">Script Opcodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standard_script.html">Standard Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standard_script.html#dao-special-scripts">DAO Special Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_tx.html">Special Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blsct.html">BLSCT Cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coldstaking.html">Cold Staking</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Release notes:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.0.0.html">NavCoin v4.0.0 Release Notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NavCoin v4.2.0 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduces-two-new-soft-forks">Introduces two new Soft Forks:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#community-fund-accumulation-of-coins-signaled-by-version-bit-7">Community Fund - Accumulation of coins, signaled by version bit 7:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ntp-sync-signaled-by-version-bit-number-8-of-staked-blocks">NTP Sync - Signaled by version bit number 8 of staked blocks:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#an-additional-network-devnet-is-added">An additional network “devnet” is added.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#core-wallet-gui-fixes">Core Wallet GUI Fixes:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-fixes-notes">Other Fixes/Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.2.1.html">NavCoin v4.2.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.3.0.html">NavCoin v4.3.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.4.0.html">NavCoin v4.4.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.0.html">NavCoin v4.5.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.0-additional-testing-notes/modified-coldstaking-client-notes-4.5.0.html">Modified client testing for cold-staking v4.5.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.1.html">NavCoin v4.5.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.2.html">NavCoin v4.5.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.6.0.html">NavCoin v4.6.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.0.html">NavCoin v4.7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.1.html">NavCoin v4.7.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.2.html">NavCoin v4.7.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.3.html">NavCoin v4.7.3 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-5.0.0.html">NavCoin v5.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-5.0.1.html">NavCoin v5.0.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-6.0.html">NavCoin v6.0 Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NavCoin Core Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>NavCoin v4.2.0 Release Notes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/release-notes/release-notes-4.2.0.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="navcoin-v4-2-0-release-notes">
+<h1>NavCoin v4.2.0 Release Notes<a class="headerlink" href="#navcoin-v4-2-0-release-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduces-two-new-soft-forks">
+<h2>Introduces two new Soft Forks:<a class="headerlink" href="#introduces-two-new-soft-forks" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="community-fund-accumulation-of-coins-signaled-by-version-bit-7">
+<h3>Community Fund - Accumulation of coins, signaled by version bit 7:<a class="headerlink" href="#community-fund-accumulation-of-coins-signaled-by-version-bit-7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Reduction of the staking rewards to 4%.</li>
+<li>Inclusion of an additional output in the Coinstake transaction contributing 0.25NAV to the Community Fund</li>
+<li>Consensus validation of the previous rule.</li>
+<li>Uses a separate DB on disk to store data about the Community Fund, increasing performance.</li>
+</ul>
+</div>
+<div class="section" id="ntp-sync-signaled-by-version-bit-number-8-of-staked-blocks">
+<h3>NTP Sync - Signaled by version bit number 8 of staked blocks:<a class="headerlink" href="#ntp-sync-signaled-by-version-bit-number-8-of-staked-blocks" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Requires mandatory clock sync against a NTP server for every node on launch.</li>
+<li>New consensus rule where no blocks in the past can exist, and maximal drift in the future for a block is 60 seconds.</li>
+<li>Peers whose clock drifts more than 30 seconds are disconnected.</li>
+<li>Clock change attempts are automatically readjusted.</li>
+<li>New log category “ntp”.</li>
+<li>New multi argument -ntpserver= to allow user to manually specify servers.</li>
+<li>New argument -ntpminmeasures= to allow user to specify the req. min. of measures.</li>
+<li>New argument -ntptimeout= to allow user to specify how many seconds should we wait for the response of a ntp server.</li>
+<li>New argument -maxtimeoffset= to set the max tolerated clock drift for peers.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="an-additional-network-devnet-is-added">
+<h2>An additional network “devnet” is added.<a class="headerlink" href="#an-additional-network-devnet-is-added" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Default p2p port: 18886</li>
+<li>Default rpc port: 44446</li>
+<li>Default datadir: OS_DATADIR/devnet</li>
+<li>Enabled through argument -devnet=1</li>
+</ul>
+</div>
+<div class="section" id="core-wallet-gui-fixes">
+<h2>Core Wallet GUI Fixes:<a class="headerlink" href="#core-wallet-gui-fixes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixes wrong pixel density on HiDPI screens.</li>
+<li>Menu option to export private key of an address and master private key.</li>
+<li>Accepts URI to sign messages.<ul>
+<li>URIs of the format navcoin:http://domain/something/?a=navcoin_address&amp;m=some_message will make the wallet to sign “some_message” and return the produced signature as a POST request to the URL specified in the URI.</li>
+</ul>
+</li>
+<li>Shows and categorizes correctly contributions to the Community Fund and payments received from it.</li>
+<li>Does not show Orphan Stakes on the Transaction List.</li>
+<li>Removes Community Fund voting popup.</li>
+</ul>
+</div>
+<div class="section" id="other-fixes-notes">
+<h2>Other Fixes/Notes<a class="headerlink" href="#other-fixes-notes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Ignores Coinstake Output when calculating the Witness Merkle Root, fixing a bug related to Segregated Witness transactions.</li>
+<li>Bans nodes with obsolete versions.</li>
+<li>Removes some recurring log messages.</li>
+<li>Updates the package version of some dependencies, solving compatibilities issues with some operating systems.</li>
+<li>Bundles some dependency libraries with the binaries.</li>
+<li>Updates the seed nodes.</li>
+<li>Fixes some of the test units.</li>
+<li>navcoin-tx tool has been updated to use navcoin’s own transaction structure</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="release-notes-4.2.1.html" class="btn btn-neutral float-right" title="NavCoin v4.2.1 Release Notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="release-notes-4.0.0.html" class="btn btn-neutral float-left" title="NavCoin v4.0.0 Release Notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, NavCoin Core Dev Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

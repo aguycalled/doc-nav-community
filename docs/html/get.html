@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>How to get NavCoin Core &mdash; NavCoin Core Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to use NavCoin Core" href="use.html" />
+    <link rel="prev" title="Welcome to NavCoin Core Documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> NavCoin Core Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to get NavCoin Core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-static-binaries">Get static binaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-from-sources">Build from sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-build-script">Using the build script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-dependencies-and-building">Install dependencies and building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deterministic-build-using-gitian">Deterministic build using Gitian</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="use.html">How to use NavCoin Core</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpc.html">RPC methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="network.html">Network parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base58check.html">Base58Check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="payloads.html">Address Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opcodes.html">Script Opcodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard_script.html">Standard Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="standard_script.html#dao-special-scripts">DAO Special Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="special_tx.html">Special Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blsct.html">BLSCT Cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coldstaking.html">Cold Staking</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Release notes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.0.0.html">NavCoin v4.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.2.0.html">NavCoin v4.2.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.2.1.html">NavCoin v4.2.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.3.0.html">NavCoin v4.3.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.4.0.html">NavCoin v4.4.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.0.html">NavCoin v4.5.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.0-additional-testing-notes/modified-coldstaking-client-notes-4.5.0.html">Modified client testing for cold-staking v4.5.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.1.html">NavCoin v4.5.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.5.2.html">NavCoin v4.5.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.6.0.html">NavCoin v4.6.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.0.html">NavCoin v4.7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.1.html">NavCoin v4.7.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.2.html">NavCoin v4.7.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-4.7.3.html">NavCoin v4.7.3 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-5.0.0.html">NavCoin v5.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-5.0.1.html">NavCoin v5.0.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/release-notes-6.0.html">NavCoin v6.0 Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">NavCoin Core Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>How to get NavCoin Core</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/get.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="how-to-get-navcoin-core">
+<span id="get-nav"></span><h1>How to get NavCoin Core<a class="headerlink" href="#how-to-get-navcoin-core" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="get-static-binaries">
+<h2>Get static binaries<a class="headerlink" href="#get-static-binaries" title="Permalink to this headline">¶</a></h2>
+<p>Final versions are released on <a class="reference external" href="https://github.com/navcoin/navcoin-core/releases">GitHub</a>.</p>
+<p>Nightly builds of the master branch are available on <a class="reference external" href="https://build.nav.community/binaries/master">build.nav.community/binaries/master</a>.</p>
+<p>Pull requests are automatically built and made available in the parent folder <a class="reference external" href="https://build.nav.community/binaries">build.nav.community/binaries</a>.</p>
+<p>Static binaries for Windows, MacOS, Linux, ARM and AARCH64 are provided. Since they are static, they can be used without any additional prerequisites.</p>
+</div>
+<div class="section" id="build-from-sources">
+<h2>Build from sources<a class="headerlink" href="#build-from-sources" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="using-the-build-script">
+<h2>Using the build script<a class="headerlink" href="#using-the-build-script" title="Permalink to this headline">¶</a></h2>
+<p>The easiest method to build from the source code is using the <a class="reference external" href="https://index.nav.community/setup.sh">setup.sh</a> script. The only requirement is to run it on Ubuntu 20.x.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">s</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">index</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">community</span><span class="o">/</span><span class="n">setup</span><span class="o">.</span><span class="n">sh</span><span class="o">|</span><span class="n">sudo</span> <span class="n">bash</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span>
+</pre></div>
+</div>
+<p>This script will build an instance of the current master branch, set up the system service and will also install an instance of the electrum server.</p>
+<p>The recommended minimum specs are a 2 core CPU and 4 GB of RAM.</p>
+<p>The installation of the electrum server can be disable indicating the parameter <code class="docutils literal notranslate"><span class="pre">--with_electrum</span> <span class="pre">0</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">s</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">index</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">community</span><span class="o">/</span><span class="n">setup</span><span class="o">.</span><span class="n">sh</span><span class="o">|</span><span class="n">sudo</span> <span class="n">bash</span> <span class="o">-</span><span class="n">s</span> <span class="o">-</span> <span class="o">--</span><span class="n">with_electrum</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-dependencies-and-building">
+<h2>Install dependencies and building<a class="headerlink" href="#install-dependencies-and-building" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Some of the dependencies require CMake 3.14 or higher. Ubuntu 18.04 ships an older version of CMake, hence requiring to manually upgrade to a newer version. This can be done using the <a class="reference external" href="https://apt.kitware.com">Kitware APT Repository</a>.</p>
+</div>
+<p>Alternatively, one can reproduce the build itself. From a fresh Linux system, one would install the dependencies and build as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo apt -y install build-essential libtool autotools-dev automake pkg-config git cmake libattr1-dev python3-dev
+git clone https://github.com/navcoin/navcoin-core.git
+cd navcoin-core
+git checkout master
+git pull
+cd depends
+make -j$(nproc)
+cd ..
+./autogen.sh
+./configure --prefix=`pwd`/depends/`uname -m`-pc-linux-gnu
+make -j$(nproc)
+</pre></div>
+</div>
+<p>The binaries will be created in the <code class="docutils literal notranslate"><span class="pre">src</span></code> folder.</p>
+</div>
+<div class="section" id="deterministic-build-using-gitian">
+<h2>Deterministic build using Gitian<a class="headerlink" href="#deterministic-build-using-gitian" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to build for any architecture using Gitian on Ubuntu 18.04 LTS Bionic Beaver:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common apt-cacher
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable&quot;
+sudo apt update
+sudo apt install docker-ce build-essential ruby-full apt-cacher-ng
+echo &#39;PassThroughPattern: .*&#39; | sudo tee -a /etc/apt-cacher-ng/acng.conf
+sudo service apt-cacher-ng restart
+cd $HOME
+git clone https://github.com/aguycalled/gitian-builder.git
+pushd ./gitian-builder
+bin/make-base-vm --docker --arch amd64 --suite bionic
+mkdir -p inputs
+pushd ./inputs
+wget https://bitcoincore.org/cfields/osslsigncode-Backports-to-1.7.1.patch
+wget http://downloads.sourceforge.net/project/osslsigncode/osslsigncode/osslsigncode-1.7.1.tar.gz
+wget https://bitcoincore.org/depends-sources/sdks/MacOSX10.11.sdk.tar.gz
+wget https://bitcoincore.org/depends-sources/sdks/MacOSX10.14.sdk.tar.gz
+</pre></div>
+</div>
+<p>In order to create the binaries, the following sequence of commands must be executed. Please, adjust <code class="docutils literal notranslate"><span class="pre">MEMORY</span></code>, <code class="docutils literal notranslate"><span class="pre">JOBS</span></code>, <code class="docutils literal notranslate"><span class="pre">REPO</span></code>, <code class="docutils literal notranslate"><span class="pre">BRANCH</span></code> and <code class="docutils literal notranslate"><span class="pre">OS</span></code> as needed. <code class="docutils literal notranslate"><span class="pre">OS</span></code> can be <code class="docutils literal notranslate"><span class="pre">osx</span></code>, <code class="docutils literal notranslate"><span class="pre">win</span></code> or <code class="docutils literal notranslate"><span class="pre">linux</span></code>. <code class="docutils literal notranslate"><span class="pre">linux</span></code> includes <code class="docutils literal notranslate"><span class="pre">ARM</span></code> and <code class="docutils literal notranslate"><span class="pre">AARCH64</span></code> binaries:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>JOBS=2
+MEMORY=2000
+export REPO=navcoin
+export BRANCH=master
+export OS=linux
+rm -rf ~/navcoin-core ; cd ~ &amp;&amp; git clone https://github.com/${REPO}/navcoin-core --branch ${BRANCH}
+cd ~/navcoin-core &amp;&amp; git pull ; git checkout ${BRANCH} ; git pull
+cd ~/gitian-builder &amp;&amp;\
+USE_DOCKER=1 ./bin/gbuild --allow-sudo --memory ${MEMORY} -j${JOBS} --commit navcoin-core=${BRANCH} --url navcoin-core=${URL} ../navcoin-core/contrib/gitian-descriptors/gitian-${OS}.yml;
+</pre></div>
+</div>
+<p>The compiled binaries will be found in <code class="docutils literal notranslate"><span class="pre">~/gitian-builder/build/out</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="use.html" class="btn btn-neutral float-right" title="How to use NavCoin Core" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to NavCoin Core Documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, NavCoin Core Dev Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

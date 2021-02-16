@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NavCoin v4.7.3 Release Notes &mdash; NavCoin Core Documentation  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="NavCoin v5.0.0 Release Notes" href="release-notes-5.0.0.html" />
+    <link rel="prev" title="NavCoin v4.7.2 Release Notes" href="release-notes-4.7.2.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> NavCoin Core Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../get.html">How to get NavCoin Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../use.html">How to use NavCoin Core</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rpc.html">RPC methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../network.html">Network parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base58check.html">Base58Check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../payloads.html">Address Payloads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../serialization.html">Serialization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../opcodes.html">Script Opcodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standard_script.html">Standard Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../standard_script.html#dao-special-scripts">DAO Special Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../special_tx.html">Special Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../blsct.html">BLSCT Cryptography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../coldstaking.html">Cold Staking</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Release notes:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.0.0.html">NavCoin v4.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.2.0.html">NavCoin v4.2.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.2.1.html">NavCoin v4.2.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.3.0.html">NavCoin v4.3.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.4.0.html">NavCoin v4.4.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.0.html">NavCoin v4.5.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.0-additional-testing-notes/modified-coldstaking-client-notes-4.5.0.html">Modified client testing for cold-staking v4.5.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.1.html">NavCoin v4.5.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.5.2.html">NavCoin v4.5.2 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.6.0.html">NavCoin v4.6.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.0.html">NavCoin v4.7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.1.html">NavCoin v4.7.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-4.7.2.html">NavCoin v4.7.2 Release Notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NavCoin v4.7.3 Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#anti-header-spam-v2">Anti Header Spam v2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#considerations">Considerations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-5.0.0.html">NavCoin v5.0.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-5.0.1.html">NavCoin v5.0.1 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes-6.0.html">NavCoin v6.0 Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">NavCoin Core Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>NavCoin v4.7.3 Release Notes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/release-notes/release-notes-4.7.3.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="navcoin-v4-7-3-release-notes">
+<h1>NavCoin v4.7.3 Release Notes<a class="headerlink" href="#navcoin-v4-7-3-release-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="anti-header-spam-v2">
+<h2>Anti Header Spam v2<a class="headerlink" href="#anti-header-spam-v2" title="Permalink to this headline">¶</a></h2>
+<p>&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/pull/656">Pull Request 656</a>&gt;
+&lt;<a class="reference external" href="https://github.com/navcoin/navcoin-core/commit/5f118753a1900241e9cf8ea38281e4fe75cfeae8">Commit 5f11875</a>&gt;</p>
+<p>Introduces a new anti header spam system which improves the previous implementation and addresses the art-of-bug reports.</p>
+<p>Features:</p>
+<ul class="simple">
+<li>Every time a header or block is received from another peer, its hash is added to a <code class="docutils literal notranslate"><span class="pre">points</span></code> list associated with the peer.</li>
+<li>Peers are discerned by their ip address, this means peers sharing ip address will also share the same <code class="docutils literal notranslate"><span class="pre">points</span></code> list. This can be changed with <code class="docutils literal notranslate"><span class="pre">-headerspamfilterignoreport</span></code> (default: <code class="docutils literal notranslate"><span class="pre">true</span></code>).</li>
+<li>Before proceeding with the block or headers validation, the <code class="docutils literal notranslate"><span class="pre">points</span></code> list will be cleared removing all the hashes of blocks whose scripts have already been correctly validated.</li>
+<li>The peer is banned if the size of the <code class="docutils literal notranslate"><span class="pre">points</span></code> list is greater than <code class="docutils literal notranslate"><span class="pre">MAX_HEADERS_RESULTS*2</span></code> once cleared of already validated blocks.</li>
+<li>The maximum allowed size of the <code class="docutils literal notranslate"><span class="pre">points</span></code> list can be changed using the <code class="docutils literal notranslate"><span class="pre">-headerspamfiltermaxsize</span></code> parameter.</li>
+<li>The log category <code class="docutils literal notranslate"><span class="pre">headerspam</span></code> has been added, which prints to the log the current size of a peers <code class="docutils literal notranslate"><span class="pre">points</span></code> list.</li>
+<li>When <code class="docutils literal notranslate"><span class="pre">-debug=bench</span></code> is specified, execution time for the <code class="docutils literal notranslate"><span class="pre">updateState</span></code> function is logged.</li>
+</ul>
+<div class="section" id="considerations">
+<h3>Considerations<a class="headerlink" href="#considerations" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>The maximum size of the <code class="docutils literal notranslate"><span class="pre">points</span></code> list by default is 4,000. With a block time of 30 seconds, NavCoin sees an average of 2,880 blocks per day. A maximum value of 4000 is roughly one and a half times more than the count of blocks a peer needs to be behind the chain tip to be in Initial Block Download mode. When on IBD, the header spam filter is turned off. This ensures that normal synchronisation is not affected by this filter.</li>
+<li>An attacker would be able to exhaust 32 bytes from the hash inserted in the <code class="docutils literal notranslate"><span class="pre">points</span></code> list + 181 bytes from the <code class="docutils literal notranslate"><span class="pre">CBlockIndex</span></code> inserted in <code class="docutils literal notranslate"><span class="pre">mapBlockIndex</span></code> for every invalid header/block before being banned. The <code class="docutils literal notranslate"><span class="pre">points</span></code> list is cleared when the attacker is banned, but those headers are not removed from <code class="docutils literal notranslate"><span class="pre">mapBlockIndex</span></code> or the hard disk in the current implementation. The size of CBlockIndex has been measured with:</li>
+</ul>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span>    <span class="n">CBlockIndex</span><span class="o">*</span> <span class="n">pindex</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CBlockIndex</span><span class="p">();</span>
+    <span class="n">CDataStream</span> <span class="nf">ssPeers</span><span class="p">(</span><span class="n">SER_DISK</span><span class="p">,</span> <span class="n">CLIENT_VERSION</span><span class="p">);</span>
+    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">CDiskBlockIndex</span><span class="p">(</span><span class="n">pindex</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="o">&gt;</span><span class="n">vch</span><span class="p">(</span><span class="n">ss</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">ss</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">to_string</span><span class="p">(</span><span class="n">vch</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>The default maximum value means that a single malicious peer with a unique IP can exhaust at max <code class="docutils literal notranslate"><span class="pre">3,999*213=831</span> <span class="pre">kilobytes</span></code> without being banned or <code class="docutils literal notranslate"><span class="pre">4,000*181=707</span> <span class="pre">kilobytes</span></code> being banned.</li>
+</ul>
+<p>For additional information about new features, check <a class="reference external" href="https://navcoin.org/en/notices/">https://navcoin.org/en/notices/</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="release-notes-5.0.0.html" class="btn btn-neutral float-right" title="NavCoin v5.0.0 Release Notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="release-notes-4.7.2.html" class="btn btn-neutral float-left" title="NavCoin v4.7.2 Release Notes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, NavCoin Core Dev Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
